@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">跳转百度</button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <button id="btn2">向上滑动</button>
+    <script>
+        /*
+            BOM ：Browser  Object  Model （浏览器对象模型）
+            bom中最大的对象是：window（浏览器窗口）
+            window 对象不需要 new，只要打开浏览器，window 对象就自动生成
+        */
+        console.log(window.name);
+        // 浏览器内容区域的宽高
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        // 整个浏览器的宽高
+        console.log(window.outerWidth);
+        console.log(window.outerHeight);
+
+
+        // alert() 弹窗 和 confirm() 确认框
+        let b = window.confirm("欢迎来到英雄联盟！");  // confirm() 返回的是一个布尔值
+        if (b) {
+            window.alert("欢迎来到诺克萨斯！");
+        } else {
+            window.alert("欢迎来到祖安！");
+        }
+
+        // 点击按钮新标签页打开网页
+        btn1.onclick = function () {
+            window.open("https://www.baidu.com");
+        }
+
+        // 浏览器启动时滚动条所在位置 scrollTo( x轴位置， y轴位置 )
+        window.scrollTo(0, 1000);
+        // 点击按钮实现平滑移动滚动条
+        btn2.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <style>
+        /* 登录界面居中 */
+        .box{
+            width: 600px;
+            height: 300px;
+            background-color: antiquewhite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -300px;
+            /* 让 input_box 这个盒子在正中间 */
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        /* 输入框和图标组成的盒子 */
+        .input_box{
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        /* 定位icon图标 */
+        .input_box span{
+            position: relative;
+            top: 5px;
+            right: 190px;
+        }
+        /* 调节输入框 */
+        .input_box input{
+           padding-left: 30px;
+           height: 20px;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="input_box">
+            <input type="text" name="username" placeholder="请输入账号">
+            <span class="iconfont icon-username"></span>
+        </div>
+        <div class="input_box">
+            <input type="password" name="password" placeholder="请输入密码"> 
+            <span class="iconfont icon-password"></span>
+        </div>
+    </div> 
+</body>
+</html>

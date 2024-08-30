@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 32px;
+        }
+        /* 
+            类选择器：要求标签必须拥有class属性，然后通过属性值选中标签
+
+            伪类选择器：它不是页面上真正存在一个class属性，而是类似于class选择器
+                通常表示的是标签的某种状态
+            
+            选择器:伪类名{   }
+
+            关于点击的伪类样式：
+            :link       未点击状态
+            :visited    点击后的状态
+            :hover      鼠标悬停在上面时的状态
+            :active     点击时的状态
+            上述的四个状态，顺序必须是：L V H A
+        */
+
+        a:link {
+            color: #f00;
+
+        }
+
+        a:visited {
+            color: #0a0;
+        }
+
+        a:hover {
+            color: goldenrod;
+            /* 鼠标悬停时字放大 */
+            font-size: 20px;
+        }
+
+        a:active {
+            color: #0af;
+            /* 鼠标悬停时字放大 */
+            font-size: 20px;
+        }
+
+        .box span:first-child {
+            color: #f0f;
+            font-weight: bold;
+        }
+
+
+        table{
+            /* 表格边框合并 */
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px 30px;
+            border: 1px solid #0af;
+        }
+        /* 表格偶数行变色 */
+        table tr:nth-child(2n){
+            background-color: rgb(210, 240, 210);
+        }
+        /* 表格奇数行变色 */
+        table tr:nth-child(2n-1){
+            background-color: rgb(145, 209, 241);
+        }
+        table tr:hover{
+            /* 鼠标悬停在表格上时变背景颜色 */
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.jd.com">jd</a>
+    <a href="https://www.taobao.com">taobao</a>
+    <a href="https://www.baidu.com">baidu</a>
+    <a href="https://www.douyin.com">douyin</a>
+
+    <br><br><br>
+    <div class="box">
+        <a href="#">baidu</a>
+        <ul>
+            <li>Java</li>
+            <li><a href="#">HTML</a></li>
+        </ul>
+    </div>
+
+    <a href="#">京东</a>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>地址</td>
+            <td>电话</td>
+        </tr>
+        <tr>
+            <td>张三1</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        <tr>
+            <td>张三2</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        <tr>
+            <td>张三3</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        <tr>
+            <td>张三4</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        
+    </table>
+</body>
+
+</html>

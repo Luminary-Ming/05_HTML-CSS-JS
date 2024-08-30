@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 900px;
+            height: 300px;
+            background-color: #0af;
+        }
+        .box div{
+            width: 200px;
+            height: 200px;            
+        }
+        .item1{
+            background-color: #fa0;
+            float: left;
+            margin-right: 33px;
+        }
+        .item2{
+            background-color: #faf;
+            float: left;
+            margin-right: 33px;
+        }
+        .item3{
+            background-color: #aaf;
+            float: left;
+            margin-right: 33px;
+        }
+        .item4{
+            background-color: #aff;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+    </div>
+</body>
+</html>
+<!-- 
+    使用浮动布局时，因为没有弹性盒子那样的自动伸缩，所以常常会在布局时分布不均。
+    例如:
+        一个大盒子的宽 900px,大盒子里面有四个宽 200px 的小盒子，如果想要水平方向上均匀分布,
+        也就是四个盒子之间的三个空隙距离为 (900 - 4 * 200) / 3 = 100 / 3 ，假设空隙距离都
+        设置成 33px，最后结尾会多出 1px，总是会分布不均。
+
+-->

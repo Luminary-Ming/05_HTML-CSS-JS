@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" id="demo" name="zhangsan" age="20" data-address="北京">演示js操作标签的属性</div>
+
+    <script>
+        /*
+            html标签的属性：
+                原生属性（标准属性）：标签自身带的属性
+                    可以使用 标签对象.属性名 去直接操作
+
+                自定义属性：程序员根据页面需要自己命名的一些属性
+                    自定义属性需要用 dom 中提供的方法来操作
+                    1. 标签对象.getAttribute("属性名")
+                    2. 标签对象.setAttribute("属性名", "属性值")
+                    3. 标签对象.removeAttribute("属性名")
+
+                 HTML5 版本中自定义属性，要求自定义属性必须以 data- 作为前缀   
+
+        */
+        let div = document.querySelector(".box");
+        // 输出 div 对象中 id选择器的属性值
+        console.log(div.id);  // demo
+        // 输出 div 对象中 class选择器的属性值
+        console.log(div.className);  // box
+
+        // 修改 div 对象中 id选择器的属性值
+        div.id = "abc";
+        console.log(div.id);  // abc
+
+        // 输出 div 对象中的自定义属性
+        console.log(div.getAttribute("name"));  // zhangsan
+        console.log(div.getAttribute("age"));  // 20
+        console.log(div.getAttribute("id"));  // 北京
+
+        // 设置自定义属性
+        div.setAttribute("sex", "男");
+        // 删除自定义属性
+        div.removeAttribute("name");
+        console.log(div);  // <div class="box" id="abc" age="20" data-address="北京" sex="男">演示js操作标签的属性</div>
+
+
+        // HTML 5版本中的自定义属性操作（新增）
+        // 获得 data-address 的值 等同于 div.getAttribute("data-address")
+        console.log(div.dataset["address"]);  // 北京
+
+        // 添加一个自定义属性  data-my-like="乒乓球" 会自动识别驼峰，驼峰处用 - 隔开
+        div.dataset["myLike"] = "乒乓球";
+        console.log(div);  // <div class="box" id="abc" age="20" data-address="北京" sex="男" data-my-like="乒乓球">演示js操作标签的属性</div>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            ES6 之前，如果需要定义类，只能通过函数来表达
+        */
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        let p = new Person('张三', 20);
+
+        /*
+            ES6 中定义类，直接使用class关键字
+            并且也有继承（extends）
+        */
+        class Student {
+            // 构造函数
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            // 定义方法
+            study() {
+                console.log(this.name + '正在学习');
+            }
+            // 静态变量
+            static num = 10;
+            // 静态方法
+            static show() {
+                console.log(this.num);
+            }
+        }
+        // 使用 new 创建对象
+        let s = new Student('小明', 20);
+        // 调用方法
+        s.study();
+        // 类名调用静态属性
+        console.log(Student.num);
+        // 类名调用静态方法
+        Student.show()
+        // 静态方法或者变量只能通过类名去调用，不能通过对象的引用调用
+        s.show();  // 报错：TypeError: s.show is not a function
+
+
+
+    </script>
+</body>
+
+</html>

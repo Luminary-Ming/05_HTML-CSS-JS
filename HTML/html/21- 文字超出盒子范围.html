@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+            /*
+                overflow 文字溢出处理
+                    hidden : 超出部分隐藏
+                    scroll : 显示横向和纵向的滚动条
+                    visible : 显示超出文字 （默认）
+                    auto : 如果内容超出盒子，自动添加纵向的滚动条
+            */
+            overflow: auto;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 100px;
+            background-color: brown;
+            /* 
+                display 属性：
+                none : 隐藏盒子
+                block : 将标签变成块级元素
+                inline : 将标签变成行内元素
+                inline-block : 将标签变成行内块元素 
+            */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">《 垓下歌 》是西楚 霸王 项羽 败亡之前吟唱的一首 诗 ，是足以惊神泣鬼的一首壮歌。 抒发了 项羽 在汉军的重重包围之中那种充士怨愤和 无可 奈何的心情。 虽然篇幅短小，但却深刻地表现了 人生
+        的这两个方面。 千百年来，它曾经打动过无数读者的心；其魅力大概就在于此吧！ 翻译/译文 力量可以拔起大 山 ，豪气世上无人能比。 但时局对我不利啊，乌骓 马 跑不起来了。</div>
+    <!-- 行内元素没有宽和高的属性，且设置的边距上下无效，左右有效 -->
+    <span class="box2"></span>
+</body>
+
+</html>

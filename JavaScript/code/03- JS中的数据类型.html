@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            Java 中的 8 大基本数据类型：
+                整数：byte short int long
+                小数：float double
+                字符：char
+                布尔：boolean
+            Java 中的引用类型：
+                类、接口、字符串、数组、枚举等。
+
+            JS 中的数据类型：
+                基本类型（简单类型）：
+                    数字类型：number  
+                    字符串类型：string（JS中没有字符类型）
+                    布尔类型：boolean
+                    空值类型：null
+                    undefined类型：undefined（未被初始化的值）
+                    symbol类型：symbol（ES6中新增）
+
+                    NaN 是 Number 中的一种，Not a Number。
+                    symbol类型的对象永不相等，即始创建的时候传入相同的值，可以解决属性名冲突的问题，做为标记。
+                
+                引用类型（复杂类型）：
+                    对象类型：object
+                        里面包含的 function、Array、Date
+        */
+        // 用 isNaN() 检测是否是非数值型。
+        console.log(isNaN(123));  // false
+        console.log(isNaN("123"));  // false
+        console.log(isNaN(Number("123")));  // false
+
+        // Number("abc") 结果是 NaN
+        console.log(Number("abc"));  // NaN
+        // NaN 是 Number 中的一种,返回true
+        console.log(isNaN(Number("abc")));  // true
+
+        // js 规定的 NaN 不等于 NaN
+        console.log(NaN == NaN);  // false
+        // NaN 是 Number 中的一种,返回true
+        console.log(isNaN(NaN));  // true
+        //----------------------------------------
+
+        // teypof()（也可以不写括号） 检测某个变量或者数值的类型
+        console.log(typeof 123);  // number
+        console.log(typeof "123");  // string
+        console.log(typeof true);  // boolean
+        // null 是表示一个空对象指针，所以会返回 object
+        console.log(typeof null);  // object
+        let aaa;
+        console.log(typeof aaa);  // undefined
+        console.log(typeof NaN);  // number
+        console.log(typeof (new Array()));  // object
+
+    </script>
+</body>
+
+</html>

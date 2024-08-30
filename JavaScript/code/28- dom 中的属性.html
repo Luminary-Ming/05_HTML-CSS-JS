@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-top: 20px;
+            width: 200px;
+            height: 150px;
+            background-color: #0a0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">div1</div>
+        <div class="box2">div2</div>
+        <div class="box3">div3</div>
+    </div>
+
+    <script>
+
+        let box2 = document.querySelector(".box2");
+        // 获取父标签
+        console.log(box2.parentNode);  // <div class="box">... </div>
+        // 获取前一个兄弟标签（可能是标签，可能是回车）
+        console.log(box2.previousSibling);  // #text（回车）
+        // 获取前一个兄弟标签（一定是标签）
+        console.log(box2.previousElementSibling);  // <div class="box1">div1</div>
+        // 获取后一个兄弟标签（可能是标签，可能是回车）
+        console.log(box2.nextSibling);  // #text（回车）
+        // 获取后一个兄弟标签（一定是标签）
+        console.log(box2.nextElementSibling);  // <div class="box3">div3</div>
+
+        // 返回 body 的第一个子标签（可能是标签，可能是回车）
+        console.log(document.body.firstChild);  // #text（回车）
+        // 返回 body 的第一个子标签（一定是标签）
+        console.log(document.body.firstElementChild);  // <div class="box">... </div>
+        // 返回 body 的最后一个子标签（可能是标签，可能是回车）
+        console.log(document.body.lastChild);
+        // 返回 body 的最后一个子标签（一定是标签）
+        console.log(document.body.lastElementChild);
+
+    </script>
+</body>
+
+</html>

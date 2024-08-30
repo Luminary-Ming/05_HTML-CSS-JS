@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            js中数组的定义：
+            方式一：
+                let arr = [1,2,true,"你好呀",5];
+            方式二：
+                let arr = new Array(1,2,true,"你好呀",5);
+                let arr = new Array(5);
+
+            数组中可以存放任意类型的数据。
+            数组中的某个空间没有存放数据时默认值为 undefined
+
+            js中定义的数组，即使给了指定的数组长度，或者给空间存储了数据，
+            仍然可以通过下标给任意空间去赋值，这时数组会自动扩容。
+        */
+        let arr = [11, 22, 33, 44, 55, 66];
+
+        // 数组空间中没有的数据默认值是 undefined
+        console.log(arr[100]);  // undefined
+
+        // 会自动扩容
+        arr[10] = "abc";
+        console.log(arr);  // [11, 22, 33, 44, 55, 66, 空属性 × 4, 'abc']
+
+        // 可以存放任意类型的数据
+        let arr2 = new Array(11, true, false, "abc", null, 0);
+
+
+
+        // 在设置数组长度时，必须是正整数（包括0），不能是负数和小数
+        let arr3 = new Array(10);
+        console.log(arr3);  // [空属性 × 10]
+
+        let arr4 = new Array(5.5);  // RangeError: Invalid array length
+        console.log(arr4);
+
+        // 注意混淆，这是存放数据
+        let arr5 = new Array("6");
+        console.log(arr5);  // ['6'] 代表存放了一个字符串数据
+
+        let arr6 = new Array(5, "abc", 6, 7);
+        console.log(arr6);  //  [5, 'abc', 6, 7]
+
+    </script>
+</body>
+
+</html>

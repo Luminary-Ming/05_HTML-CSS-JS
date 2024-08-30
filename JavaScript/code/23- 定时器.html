@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在全局位置上定义的 var 变量实际是修改 window 对象中的属性值（前提是 window 中有此属性）
+        var name = "zhangsan";
+        console.log(window.name);  // zhangsan
+        // 在全局位置上定义的 let 变量是存在于Script（脚本）作用域中的
+        // let name = "zhangsan"
+        //  console.log(name);  // zhangsan
+        // 相当于在 window 对象中添加一个 demo 方法
+        function demo() { }
+
+        /*
+            定时器：
+                setInterval(function () { }, 时间) 周期性定时器
+                setTimeout(function () { }, 时间)  一次性定时器
+            清除定时器：
+                clearInterval(定时器标识符)
+                clearTimeout(定时器标识符)
+        */
+
+        let count = 0;
+        let timeId1 = window.setInterval(function () {
+            console.log("我是周期性定时器，每1s运行一次");
+            count++;
+            console.log(count);
+            if (count == 10) {
+                window.clearInterval(timeId1);
+                console.log("清除周期性定时器")
+            }
+        }, 1000);
+
+        let timeId2 = window.setTimeout(function () {
+            console.log("我是一次性定时器，只运行一次，1s后运行");
+        }, 1000);
+        // window.clearTimeout(timeId2);
+    </script>
+</body>
+
+</html>

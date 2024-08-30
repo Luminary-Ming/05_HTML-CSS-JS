@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* 设置div的宽度和高度（盒子的大小） */
+            width: 200px;
+            height: 150px;
+            /* 
+                内边距：盒子中的内容与盒子边框之间的距离
+            */
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 40px;
+            /* 
+            边框:由三个值组成： 线的颜色、线型（solid 实线、double 双实线、dashed 虚线、dotted 点线）、线宽
+            border-top-color: #f00;
+            border-top-width: 6px;
+            border-top-style: solid;
+           
+            border-top: #f00 1px solid;
+            border-right: #0a0 1px double;
+            border-bottom: #fa0 1px dashed;
+            border-left: #0af 1px dotted;
+             */
+            border: 1px solid #f00; 
+        }
+        .box2{
+            border: 10px solid #0a0;
+            /* 设置盒子的外边距 
+            margin-top: 10px;
+            margin-right: 20px;
+            margin-bottom: 30px;
+            margin-left: 40px;
+            
+            使用margin书写复合属性：
+                margin：一个值， 表示上右下左外边距都是这个值 顺时针
+                margin：两个值， 第一个值表示上下，第二值表示左右
+                margin：三个值， 第一个值表示上下，第二值表示左右，第三个值表示下
+                margin：四个值， 第一个值表示上，第二值表示右，第三个值表示下，第四个值表示左
+            */
+            margin: 30px 60px 100px 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">设置div的宽度和高度</div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

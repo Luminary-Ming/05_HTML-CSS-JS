@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <!-- 
+        form : 表单标签
+        input:表单的输入项，其中最终的属性是type
+            type='text'         单行文本框（默认）
+            type='password'     密码输入框
+            type="radio"        单选按钮 
+                针对单选按钮，必须给其再添加一个name属性
+            type="checkbox"     复选框
+        ---------------------------------------------
+            type="file"         文件选择框 (主要用于客户端给服务器上传文件)
+            type="hidden"       页面不需要看到，但是表单提交的时候需要给后端程序必须提交一些数据
+            type="email"        html5版本新加的，表示邮箱输入框
+            type="number"       html5版本新加的，数字输入框
+            type="date"         htm15版本新加的，日期选择框
+            type="time""        html5版本新加的，时间选择框
+            type="datetime"     html5版本新加的，日期时间选择框（浏览器目前还不支持)
+            type="datetime-local"   html5版本新加的，日期时间选择框
+            type="color"         html5中新加的，颜色选择器
+
+
+            type="submit"       表单的提交按钮
+            type="reset"        表单的重置按钮
+            type="button"       普通的按钮
+        ----------------------------------------------
+        select 下拉框
+            option标签来书写可以下拉的每一个可选项
+        textarea 文本域（多行文本框）    
+    -->
+
+    <!-- 
+        1、表单中的数据如果需要提交，每个表单项，都需要添加应给name属性
+        2、如果表单中的某些项是让用户选择的，这时需要给出对应的value属性
+        3、如果select标签中的option没有书写value属性， 浏览器在提交表单的时候，会将option中的文本作为值
+        4、如果输入框、下拉框、文本域需要给出提示信息时可以使用placeholder属性
+        5、针对单选和复选框，可以使用checked="checked" 属性表示哪些是默认选中
+        6、下拉框的某个option默认被选中，需要使用selected属性
+
+        
+        label 可以将单选或者复选框包裹起来，在点击文本的时候也能达到选择的效果
+
+
+        action：用于书写表单的数据最终给哪个后端程序提交（后端代码的地址）
+        method：表单提交的方式
+        get：默认方式，在提交数据的时候，数据会拼接在浏览器的地址栏中
+            会将当前网页地址和action拼接在一起使用?key=value&key=value
+            https: //www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=html
+        post:数据被放在http协议的请求体中
+    --> 
+    <form action="#" method="get">
+        <!-- 书写表单的每一项 -->
+        <div>姓名：<input type="text" name="username" placeholder="请输入姓名"></div>
+        <div>年龄：<input type="text" name="age" readonly></div>
+        <div>账号：<input type="text" name="account"></div>
+        <div>密码：<input type="password" name="password"></div>
+        <div>
+            性别：
+            <input type="radio" name="sex" value="男">男
+            <input type="radio" name="sex" value="女" checked>女
+            <input type="radio" name="sex" value="保密">保密
+        </div>
+        <div>
+            爱好：
+            <label>
+                <input type="checkbox" name="hobby" value="唱" checked="checked">唱
+            </label>
+            <label><input type="checkbox" name="hobby" value="跳" checked="checked">跳</label>
+
+            <label><input type="checkbox" name="hobby" value="rap" disabled>rap</label>
+
+        </div>
+        <div>
+            地址：
+            <select name="address">
+                <option value="beijing" >北京</option>
+                <option value="tianjin">天津</option>
+                <option value="上海">上海</option>
+                <option value="深圳" selected>深圳</option>
+                <option value="铁岭">铁岭</option>
+            </select>
+        </div>
+        <div>
+            描述：<textarea cols="20" rows="5" name="desc"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="登录">
+            <input type="reset" value="重置">
+            <input type="button" value="普通按钮">
+            <br>
+            <button>提交</button>
+            <button type="reset">重置</button>
+        </div>
+    </form>
+</body>
+</html>

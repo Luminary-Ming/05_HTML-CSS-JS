@@ -1,0 +1,23 @@
+{
+  "id": "4656149",
+  "name": "注册登录界面",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "677608",
+      "name": "用户",
+      "font_class": "username",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "925483",
+      "name": "密码",
+      "font_class": "password",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button class="btn">添加新的li</button>
+    <ul class="list">
+        <li>数据1</li>
+        <li>数据2</li>
+        <li>数据3</li>
+    </ul>
+
+    <script>
+        /*
+            事件委派：也叫事件代理、事件委托
+                事件委派就是利用事件冒泡的处理机制把原本需要绑定到子标签身上的事件委托给父标签。
+            
+            使用事件委派的好处：
+                添加事件监听过多会大量消耗内存，耗费资源，影响代码性能，
+                而对于事件委派，把事件委托到父标签上时，极大地改善了代码性能。
+
+        */
+
+        let btn = document.querySelector(".btn");
+        let ul = document.querySelector(".list");
+
+        // 数据编号
+        let n = 3;
+        // 点击按钮添加新的 li 标签
+        btn.addEventListener("click", function () {
+            n++;
+            ul.innerHTML += `<li>数据${n}</li>`;
+        });
+
+        // 事件绑定到父标签上，这样点击子标签（li）就会冒泡到父标签事件上，节省了性能消耗。
+        ul.addEventListener("click", function (e) {
+            // e表示事件对象（事件发生的源头）
+            // e对象中，有 target属性，代表事件源
+            console.log(e.target);
+            // e.target事件源中有一个 nodeName属性，能获取事件源的标签名称
+            console.log(e.target.nodeName);
+
+            // 点击 li 标签，对应的 li 标签变红
+            if (e.target.nodeName == "LI") {
+                e.target.style.color = "red";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

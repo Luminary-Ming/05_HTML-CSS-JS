@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            逻辑运算：
+                && : 左侧为false，右侧短路不计算
+                || : 左侧为true，右侧短路不计算
+                ! : 非，取反
+        */
+        console.log(3 > 4 && 4 < 5); // false
+        console.log(3 < 4 || 4 < 5); // true
+        console.log(!(4 < 5)); // false
+        /*
+            JS 与 Java 中的不同：
+            JS中进行逻辑运算的时候，
+            如果运算符两侧不是具体的boolean值，就需要进行非零和零的转换，
+            通过转换来决定是否形成短路，最终的运算结果是当前参与运算表达式的值。
+        */
+        // 运算步骤：5 转换成boolean是true，不短路，所以最终结果是右侧表达式的值 即 4
+        console.log(5 && 4); // 4
+
+        // 运算步骤：" " 转换成boolean是true，短路，所以最终结果是左侧表达式的值 即 空格
+        console.log(" " || 6); // 空格
+
+        // 运算步骤：0 转换成boolean是false，短路，所以最终结果是左侧表达式的值 即 0
+        console.log(0 && 9); // 0
+    </script>
+</body>
+
+</html>

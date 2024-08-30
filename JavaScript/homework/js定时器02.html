@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>现在时间是：</h1>
+    <script>
+
+        // TODO 有时间再写一个获取各个年月日时分秒的
+        let h1 = document.querySelector("h1");
+        setInterval(function () {
+            h1.innerHTML = `${new Date().toLocaleString()}`;
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

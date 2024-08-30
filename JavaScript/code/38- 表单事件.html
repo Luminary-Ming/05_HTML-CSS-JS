@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            font-size: 14px;
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="get">
+        <p>
+            姓名：<input type="text" name="username">
+            <span class="error username-error"></span>
+        </p>
+        <p>
+            密码：<input type="password" name="password">
+            <span class="error password-error"></span>
+        </p>
+
+        <p>电话：<input type="text" name="telephone"></p>
+        <p>住址：<input type="text" name="address"></p>
+        <p><button type="submit">提交</button></p>
+    </form>
+
+    <script>
+
+        // 获取 input 标签中带有 name="username" 属性和属性值的对象
+        let usernameInput = document.querySelector("input[name='username']");
+        // 获取 input 标签中带有 name="password" 属性和属性值的对象
+        let passwordInput = document.querySelector("input[name='password']");
+
+        // 绑定输入框失去焦点事件
+        usernameInput.addEventListener("blur", function () {
+            if (usernameInput.value == "" || usernameInput.value == null) {
+                document.querySelector(".username-error").innerHTML = "用户名不能为空";
+            } else {
+                document.querySelector(".username-error").innerHTML = "";
+            }
+        });
+
+        // 绑定输入框失去焦点事件
+        passwordInput.addEventListener("blur", function () {
+            if (passwordInput.value == "" || passwordInput.value == null) {
+                document.querySelector(".password-error").innerHTML = "密码不能为空";
+            } else {
+                document.querySelector(".password-error").innerHTML = "";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

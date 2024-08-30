@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体样式</title> 
+    <style>
+        .box{
+            width: 600px;
+            height: 500px;
+            background-color: antiquewhite;
+
+            /* 字体颜色 */
+            color: red;
+
+            /* 字体样式 默认值 微软雅黑 */
+            font-family: "微软雅黑";
+
+            /* 字体大小 默认值 16px*/
+            font-size: 32px;
+
+            /* 
+                字体粗细
+                值：100 - 900
+                 400(normal) 
+                 600(bold) 
+                属性：bold 加粗  none 不加粗，默认
+            */
+            font-weight: bold;
+
+            /* 行高 */
+            line-height: 32px;
+
+            /* 
+                装饰线：
+                underline：下划线
+                overline：上划线
+                line-through：贯穿线、删除线
+                none：无
+            */
+            text-decoration: overline;
+
+            /* 
+                文本的水平对齐方式：
+                    text-align : 
+                        left 左对齐
+                        center 居中对齐
+                        right  右对齐 
+            */
+            text-align: center;
+        }
+
+        .box2{
+            width: 600px;
+            height: 200px;
+            background-color: rgb(178, 137, 84);
+
+            /* 首行缩进  2em 两个字的长度  可以是负值，文字跑到左边屏幕里面去了*/
+            text-indent: 2em;
+
+           /* 禁止换行 */
+            white-space: nowrap;
+            /* 超出盒子宽度的部分隐藏 */
+            overflow: hidden;
+            /* 
+                文本超出盒子宽度后显示隐藏效果
+                    ellipsis：显示...
+                    clip：无 默认效果
+            */
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <p class="box">字体样式字体样式字体样式</p>
+
+    <p class="box2">港股上市公司柠萌影视股价出现波动，截至当日收盘，公司股价报收于5.14港元/股，跌幅达10.61%。
+
+        　　柠萌影视此前曾发布盈利警告，预计公司2024年上半年亏损约为4700万元至5200万元，而2023年同期公司实现净利润约1.39亿元。
+        
+        　　盈利警告显示，引发亏损的主要原因是，柠萌影视原定于2024年上半年播出的剧集因档期原因将延后至2024年下半年内播出，相关剧集的收入及利润也将延后至2024年下半年确认。
+        
+        　　据了解，柠萌影视上半年并非无剧可播，例如版权剧《你也有今天》上半年就已在优酷平台播出。
+        
+        　　同时，记者注意到，柠萌影视招股书显示，公司2021年上半年毛利率达52.9%，而到2023年，毛利率已降到了39.4%。
+        
+        　　一位不愿具名的影视行业资深从业者向《证券日报》记者表示，受腾讯、爱奇艺、优酷等平台近些年实施“降本增效”调整的影响，针对版权剧的高价收购已逐渐成为历史。由于剧集制作的合同签订和播出的延迟性，此前影视公司和平台签订的部分高价版权剧基本都已在2023年消耗完毕。“2024年之后，影视公司很难靠版权卖出超高利润。”
+    </p>
+</body>
+</html>

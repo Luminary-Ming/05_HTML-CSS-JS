@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名2.0-会话存储</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #fbe8d3;
+            margin: 0 auto;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 64px;
+        }
+
+        .btn {
+            width: 150px;
+            height: 50px;
+            border: 0;
+            font-size: 20px;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #00adb5;
+
+        }
+
+        .clear {
+            width: 200px;
+            margin-top: 60px;
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- html -->
+    <div class="box">
+        <h1>😜猜猜点到谁！？😜</h1>
+        <p class="name">😃</p>
+        <button class="btn">开始点名</button><br>
+        <button class="btn clear" onclick="clearSession()">清除&ensp;sessionStorage</button>
+    </div>
+
+    <!-- js -->
+    <script>
+        // 名单
+        let arr = [
+            "王逸彬", "侯宇博", "李宏瑞", "杨荣芳", "谷孝颖",
+            "张金龙", "乔丽娇", "邓文柱", "孙嘉隆", "江缨珊",
+            "何路杨", "高婷", "李玮", "杜怡凡", "吕景贤",
+            "彭锦琦", "何政佳", "张敏学", "门玉明", "王梦渝",
+            "李天旭", "高柏文", "张梓鹏", "孟成旺", "周靖轩",
+            "张哲", "张骏驰", "朱旭", "倪学桐", "李梦轩",
+            "周奎", "肖鉥波", "韩胜", "周海祥", "李浩阔",
+            "李铭帅", "宋紫阳", "徐博", "许艳辉", "白鑫华",
+            "崔岩", "孟庆诺", "王阔", "刘智辉"
+        ];
+
+
+        let btn = document.querySelector(".btn");
+        // 定时器的 id
+        let timeId = null;
+        // 随机数
+        let x = -1;
+        // 按钮点击次数
+        let count = 1;
+        btn.addEventListener("click", function () {
+            // 每点击一次 +1
+            count++;
+
+            // 偶数调用 start() 奇数调用 stop()
+            if (count % 2 == 0) {
+                start();
+            } else {
+                stop();
+            }
+
+        });
+
+        // 开始点名
+        function start() {
+            // 点击按钮变样式
+            btn.innerHTML = "停止";
+            btn.style.backgroundColor = "rgb(230, 44, 90)";
+            // 定时器
+            timeId = setInterval(function () {
+                // 遍历名单
+                for (let i in arr) {
+                    // 随机数
+                    x = Math.floor(Math.random() * arr.length);
+                    // 去重，去掉点过的人名
+                    while (arr[x] == sessionStorage.getItem(`name${x}`)) {
+                        x = Math.floor(Math.random() * arr.length);
+                    }
+                    // 打印在浏览器上
+                    document.querySelector(".name").innerHTML = arr[x];
+                }
+            }, 2)
+        }
+
+
+        // 停止点名
+        function stop() {
+            // 点击按钮变样式
+            btn.innerHTML = "开始点名";
+            btn.style.backgroundColor = "#00adb5";
+            // 清除定时器
+            clearInterval(timeId);
+            document.querySelector(".name").innerHTML += "😅";
+            // 点到的名字存到 sessionStorage 里
+            sessionStorage.setItem(`name${x}`, arr[x])
+        }
+
+        // 清除 sessionStorage
+        function clearSession() {
+            console.log(123);
+            sessionStorage.clear();
+        }
+    </script>
+</body>
+
+</html>

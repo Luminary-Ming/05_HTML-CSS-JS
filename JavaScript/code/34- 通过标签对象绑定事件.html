@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button class="btn">点击变色</button>
+
+    <script>
+        /*
+            js中常用的事件：
+                click ：鼠标单击
+                dblclick ：鼠标双击
+                mouseover ：鼠标移入标签
+                mouseout ：鼠标移出标签
+                keydown ：键盘按下
+                keypress ：键盘按住
+                keyup ：键盘松开
+                blur ：失去焦点
+                focus ：获取焦点
+        */
+
+        // 第二种绑定事件方法：通过标签对象绑定事件
+        let btn = document.querySelector(".btn");
+        btn.onclick = function () {
+            console.log(123);  // 因为被覆盖掉了所以不会输出
+            let box = document.querySelector(".box");
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+
+        // 向同一标签对象添加相同类型事件时会覆盖上个相同事件
+        btn.onclick = function () {
+            console.log("abc");  // abc
+            let box = document.querySelector('.box');
+            box.style.width = "500px";
+        }
+    </script>
+</body>
+
+</html>

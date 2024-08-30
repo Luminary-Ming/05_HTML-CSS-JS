@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 根据学生的分数，对应输出该分数所对应的考试等级:A/B/C/D
+        let score = 88;
+        switch (parseInt(score / 10)) {
+            case 10:
+            case 9:
+                document.write("A");
+                break;
+            case 8:
+                document.write("B");
+                break;
+            case 7:
+            case 6:
+                document.write("C");
+                break;
+            default:
+                document.write("D")
+                break;
+        }
+    </script>
+</body>
+
+</html>

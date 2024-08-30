@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 点击按钮或超链接出现弹窗 -->
+    <button onclick="alert('点击了按钮')">我是一个按钮</button>
+    <br /><br />
+    <a href="javascipt:vpid(0)" onclick="alert('这是一个弹窗')">我是一个超链接</a>
+
+    <!-- js 代码一般写在 html 代码后面 -->
+    <script>
+        // 控制台打印内容
+        console.log("你好！");
+        console.log(123);
+
+        // 浏览器弹窗
+        window.alert("你好，请看控制台！");
+
+        // 将数据写到页面上
+        document.write("<br><br><b>这是通过js代码写进网页去的</b>");
+    </script>
+</body>
+
+</html>

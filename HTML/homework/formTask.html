@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            font-size: 20px;
+            
+        }
+
+        .head{
+            font-size: 25px;
+            font-weight: bold;
+            color: aliceblue;
+            background-color:darkorange;
+            padding: 10px;
+            padding-left: 80px;
+        }
+
+        .title{
+           font-weight: bold;
+           color: darkorange;
+           position: absolute ;
+            left: 478px;
+            top: 130px;
+
+        }
+        .title2{
+          position: relative;
+          right: -390px;
+        }
+
+        table{
+            margin: auto;
+            margin-top: 100px;
+        }
+        td{
+            width: 500px;
+            height: 30px;
+            padding: 10px;
+        }
+ 
+        .yanzhengma{
+            width: 80px;
+            height: 30px;
+        }
+
+        .lianjie{
+            /* 去掉超链接下划线 */
+            text-decoration: none;
+        }
+
+        .button{
+            padding: 3px 12px; 
+            color: aliceblue;
+            background-color: darkorange;
+            border: 0;
+            /* 按钮圆角 */
+            border-radius:8%;
+        }
+        .button1{
+            margin-left: 50px;
+        }
+
+        .kabuqing, img{
+            /* 解决3px问题 */
+            vertical-align: bottom;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+
+        <div class="head">注册</div>
+
+        <div class="title">
+            <span>用户信息（必填）：</span>
+            <span class="title2">可选填信息：</span>
+        </div>
+
+        <table>
+            <form action="#">
+                
+                <tr> 
+                    <td>
+                        <div>用&nbsp;&nbsp;户&nbsp;&nbsp;名：&nbsp;&nbsp;&nbsp;<input type="text"></div>
+                    </td> 
+                    <td>
+                        <div>手机号：<input type="text"></div>
+                    </td>
+                    
+                </tr>
+                <tr> 
+                    <td>
+                        <div>用户密码：&emsp;<input type="password"></div>
+                    </td> 
+                    <td>
+                        <div>性别：
+                            <input type="radio" name="sex" checked>男
+                            <input type="radio" name="sex">女
+                        </div>
+                    </td> 
+                    
+                </tr>
+                <tr> 
+                    <td>
+                        <div>安全性级别：<input type="text" placeholder="         低      中      高"></div>
+                    </td> 
+                    <td><div>生&nbsp;&nbsp;&nbsp;日：<input type="date"></div></td> 
+                
+                </tr>
+                <tr> 
+                    <td><div>确认密码：&emsp;<input type="password"></div></td> 
+                    <td><div>地&nbsp;&nbsp;&nbsp;址：<input type="text"></div></td> 
+                </tr>
+                <tr> 
+                    <td><div>邮&emsp;&emsp;箱：&emsp;<input type="email"></div></td> 
+                    <td><div>邮&nbsp;&nbsp;&nbsp;编：<input type="text"></div></td> 
+                </tr>
+                <tr> 
+                    <td>
+                        <div>昵&emsp;&emsp;称：&emsp;<input type="text"></div>
+                    </td> 
+                    <td><div>-------------------------------------</div></td> 
+                </tr>
+                <tr> 
+                    <td><div>密保问题1：
+                        <select name="mibao1">
+                            <option value="one">- - 请选择 - -</option>
+                            <option value="mingzhu">四大名著都有哪些？</option>
+                            <option value="dang">中国共产党成立的时间？</option>
+                            <option value="Java">Java内存机制？</option>
+                        </select>&emsp;</div>
+                    </td>
+                    <td><div>
+                        <label>
+                            <input type="checkbox" name="hobby" value="唱" checked="checked">同意：
+                            <a href="#">测试数据321</a>
+                        </label>
+                    </div></td>
+                </tr>
+                <tr> 
+                    <td>
+                        <div>答&emsp;&emsp;案1：&nbsp;<input type="text"></div>
+                    </td>
+                    <td>
+                        <div>
+                            <button class="button">提&nbsp;&nbsp;交</button>
+                            <button class="button  button1">重&nbsp;&nbsp;置</button>  
+                        </div>
+                    </td>
+                </tr>
+                <tr> 
+                    <td><div>密保问题2：
+                        <select name="mibao2">
+                        <option value="one">- - 请选择 - -</option>
+                        <option value="mysql">说出mysql查询语句？</option>
+                        <option value="linux">Linux快捷键说出几个？&nbsp;&nbsp;</option>
+                        <option value="redis">Redis是什么？</option>
+                    </select>&emsp;</div>
+                </td> 
+                </tr>
+                <tr> 
+                    <td><div>答&emsp;&emsp;案2：&nbsp;<input type="text"></div></td> 
+                    <td><div><a href="#" class="lianjie">已有账户了？点击立即登录。</a></div></td>
+                </tr>
+                <tr> 
+                    <td>
+                        <div>
+                            <span>网站验证码：<input type="text" class="yanzhengma"></span>
+                            <img height="50px" src="./img/验证码.jpg" alt="加载失败">
+                            <a href="#" class="kabuqing">看不清，换一张</a>
+                        </div>
+                    </td>
+                </tr>
+            </form>
+        
+        </table>
+    </div>
+</body>
+</html>

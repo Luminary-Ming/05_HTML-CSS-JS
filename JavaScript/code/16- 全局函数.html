@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            js中的全局属性：
+                Infinity ：无穷大
+                NaN ：不是一个数字
+                undefined ：未定义的值
+            js中的全局函数：
+                String(数据) : 将数据转成字符串 
+                Number(数据) ：将数据转成数字类型
+                Boolean(数据) ：将数据转成boolean值
+                parseInt(数据) ：将数据转成整数
+                parseFloat(数据) ：将数据转成浮点数
+                isNaN()  检查某个值是否是NaN
+                isFinite()  是否是一个无穷大的数
+                encodeURI()  把字符串编码成二进制
+                decodeURI()  把二进制解码成字符串
+                eval()  将字符串转成 js 代码
+        */
+        console.log(String(123));  // 123（字符串类型）
+        console.log(Boolean(0));  // false
+
+        let str = "alert(1)";  // 有个弹窗
+        eval(str);
+
+        /*
+            编码表：计算机底层只能识别二级制数，生活中的符号基本都不会使用二进制，
+                    因此不同的国家针对自己国家的文字符号制定了编码。
+            ASCII：英文字母、数字、符号，0-127
+            GBK：中文  大概2万多中文符号
+            GB2312：中文  6000+中文符号
+            UTF-8：全球通用码表
+
+            编码和解码：
+                编码：把生活中的符号通过编码表转成二进制
+                解码：把二进制通过编码表转成生活中的符号
+        */
+        let str2 = "http://www.baidu.com?username=张三&age=20&address=北京";
+        // 编码
+        let newStr2 = encodeURI(str2);
+        console.log(str2);  // http://www.baidu.com?username=张三&age=20&address=北京
+        console.log(newStr2);  // http://www.baidu.com?username=%E5%BC%A0%E4%B8%89&age=20&address=%E5%8C%97%E4%BA%AC
+        // 解码
+        let str3 = decodeURI(newStr2);
+        console.log(str3);  // http://www.baidu.com?username=张三&age=20&address=北京
+    </script>
+</body>
+
+</html>

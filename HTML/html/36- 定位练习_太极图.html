@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big{
+            width: 600px;
+            height: 600px;
+            border-radius: 300px;
+            border: 1px solid black;
+            margin: auto;
+            position: relative;
+        }
+
+        .left{  
+            width: 300px;
+            height: 600px;
+            border-radius: 300px 0 0 300px;
+            background-color: black;
+        }
+
+        .right{  
+            width: 300px;
+            height: 600px;
+            border-radius: 0 300px 300px 0;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 300px;
+        }
+
+        .top_right{
+            width: 200px;
+            width: 200px;
+            border-radius: 0 100px 100px 0;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 100.px;
+        }
+
+        .bottom_left{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: red;
+            position: absolute;
+            bottom: 0;
+            left: 200px;
+        }
+
+        /* .top_little{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 200px;
+        }
+
+        .bottom_little{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: red;
+            position: absolute;
+            bottom: 0;
+            left: 200px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- 整个大圆框 -->
+    <div class="big">
+        <!-- 左半黑圆 -->
+        <div class="left"></div>
+        <!-- 右半红圆 -->
+        <div class="right"></div>
+
+        <!-- 上黑右半圆 -->
+        <div class="top_right"></div>
+        <!-- 下红左半圆 -->
+        <div class="bottom_left"></div>
+
+        <!-- 上黑小圆 -->
+        <div class="top_little"></div>
+        <!-- 下红小圆 -->
+        <div class="bottom_little"></div>
+    </div>
+</body>
+</html>

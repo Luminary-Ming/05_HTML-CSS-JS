@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            js中的函数返回值：
+                1. js中的 return 可以返回任何数据，并且不需要写返回值类型
+                2. js中的 return 如果后面跟多个值，只会返回末尾数据 
+                3. js中的 return 如果后面没有跟值，代表让函数结束运行，调用语句得到 undefined
+        */
+
+        function demo() {
+            return "你好";
+        }
+        console.log(demo());  // 你好
+
+
+        function demo1() {
+            return "你好", 1, 2, 3;
+        }
+        console.log(demo1());  // 3
+
+
+        function demo2() {
+            return;
+            console.log("不能运行到我这");
+        }
+        console.log(demo2());  // undefined
+
+
+
+    </script>
+</body>
+
+</html>

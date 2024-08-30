@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* 怪异盒子 */
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .box .data-box {
+            height: 120px;
+            background-color: #f54336;
+            color: #fff;
+        }
+
+        .box .data-box .task-input {
+            width: 70%;
+            height: 40px;
+            padding-left: 20px;
+            margin-top: 10px;
+            /* 边框 外边框都设为 0 */
+            border: 0;
+            outline: 0;
+        }
+
+        .box .data-box button {
+            width: 25%;
+            height: 40px;
+            vertical-align: bottom;
+            cursor: pointer;
+        }
+
+        .task-list .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 25px;
+        }
+
+        .task-list .task-item:nth-child(2n) {
+            background-color: #f1f1f1;
+        }
+
+        .task-list .task-item .task-del {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="data-box">
+            <h1>我的任务列表</h1>
+            <input type="text" class="task-input" placeholder="请输入新任务名称">
+            <button id="addBtn">添加任务</button>
+        </div>
+        <ul class="task-list">
+            <li class="task-item">
+                <span class="task-title">游泳</span>
+                <span class="task-del">X</span>
+            </li>
+            <li class="task-item">
+                <span class="task-title">唱歌</span>
+                <span class="task-del">X</span>
+            </li>
+            <li class="task-item">
+                <span class="task-title">敲代码</span>
+                <span class="task-del">X</span>
+            </li>
+            <li class="task-item">
+                <span class="task-title">看动漫</span>
+                <span class="task-del">X</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // 添加任务
+        addBtn.onclick = function () {
+            let input = document.querySelector(".task-input");
+            let ul = document.querySelector(".task-list");
+            ul.innerHTML += `<li class="task-item">
+                                <span class="task-title">${input.value}</span>
+                                <span class="task-del">X</span>
+                            </li>`;
+        }
+
+        // TODO 删除存在bug，添加任务后删除就不可用
+        // 删除任务
+        let del = document.querySelectorAll(".task-del");
+        del.forEach(element => {
+            element.onclick = function () {
+                console.log(this);
+                element.parentNode.remove();
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

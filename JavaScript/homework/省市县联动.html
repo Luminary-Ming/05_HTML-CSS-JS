@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 省 -->
+    <select class="province"></select>
+    <!-- 市 -->
+    <select class="city"></select>
+    <!-- 县 -->
+    <select class="county"></select>
+
+    <script>
+        let datas = [
+            {
+                provinceName: "河北省",
+                city: [
+                    {
+                        cityName: "沧州",
+                        county: [{ countyName: "南皮县" }, { countyName: "东光县" }, { countyName: "吴桥县" }]
+                    },
+                    {
+                        cityName: "石家庄",
+                        county: [{ countyName: "桥西区" }, { countyName: "裕华区" }, { countyName: "新华区" }]
+                    },
+                    {
+                        cityName: "廊坊市",
+                        county: [{ countyName: "永清县" }, { countyName: "大城县" }, { countyName: "文安县" }]
+                    }
+                ]
+            },
+            {
+                provinceName: "辽宁省",
+                city: [
+                    {
+                        cityName: "沈阳市",
+                        county: [{ countyName: "和平区" }, { countyName: "沈河区" }, { countyName: "大东区" }]
+                    },
+                    {
+                        cityName: "大连市",
+                        county: [{ countyName: "中山区" }, { countyName: "西岗区" }, { countyName: "金州区" }]
+                    },
+                    {
+                        cityName: "丹东市",
+                        county: [{ countyName: "元宝区" }, { countyName: "振兴区" }, { countyName: "振安区" }]
+                    }
+                ]
+            },
+            {
+                provinceName: "吉林省",
+                city: [
+                    {
+                        cityName: "长春市",
+                        county: [{ countyName: "南关区" }, { countyName: "朝阳区" }, { countyName: "宽城区" }]
+                    },
+                    {
+                        cityName: "吉林市",
+                        county: [{ countyName: "龙潭区" }, { countyName: "昌邑区" }, { countyName: "永吉县" }]
+                    },
+                    {
+                        cityName: "廊坊市",
+                        county: [{ countyName: "永清县" }, { countyName: "大城县" }, { countyName: "文安县" }]
+                    }
+                ]
+            }
+        ];
+
+        // 省选择栏
+        let provinceNames = document.querySelector(".province");
+        for (let i in datas) {
+            provinceNames.innerHTML += `<option>${datas[i].provinceName}</option>`;
+        }
+
+
+        // 市选择栏
+        let cityNames = document.querySelector(".city");
+        let cityArr = [];
+        // 当选择的省改变时，出现对应的市选择栏
+        provinceNames.addEventListener("change", function () {
+            // 输出选择省时选择栏的下标
+            console.log(provinceNames.selectedIndex);
+            cityArr = datas[provinceNames.selectedIndex].city;
+            let citys = "";
+            for (let i in cityArr) {
+                citys += `<option>${cityArr[i].cityName}</option>`;
+            }
+            cityNames.innerHTML = citys;
+        });
+
+
+        // 县选择栏
+        let countyNames = document.querySelector(".county");
+        // 当选择的市改变时，出现对应的县选择栏
+        cityNames.addEventListener("change", function () {
+            let countyArr = cityArr[cityNames.selectedIndex].county;
+            let countys = "";
+            for (let i in countyArr) {
+                countys += `<option>${countyArr[i].countyName}</option>`;
+            }
+            countyNames.innerHTML = countys;
+        });
+
+    </script>
+</body>
+
+</html>

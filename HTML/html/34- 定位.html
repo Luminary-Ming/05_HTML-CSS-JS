@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+         /* 
+            定位 
+                static:默认值
+                absolute：绝对定位
+                relative : 相对定位
+                fixed : 固定定位
+                使用了定位之后，可以使用left、right、top、bottom属性将标签定位到页面的任何位置
+        */
+       
+        .box1{
+            width: 200px;
+            height: 150px;
+            background-color: #fa0;
+            /* 
+                绝对定位：脱离文档流
+                以父标签为参照物，如果父标签没有定位，最终就会以网页边缘为参照物（body），距离上边缘30px，右边缘60px 
+            */
+            position: absolute;
+            top: 30px;
+            right: 60px;
+        }
+
+        .box2{
+            width: 200px;
+            height: 150px;
+            background-color: #0a0;
+            /* 
+                相对定位：不脱离文档流，保留原有位置
+                以原位置位参照物，距离原上边距200px，左边距150px
+            */
+            position:relative;
+            top: 200px;
+            left: 150px;
+        }
+
+        .box3{
+            width: 240px;
+            height: 190px;
+            background-color: #0af;
+            /* 
+                固定定位：脱离文档流，随着滚动条滚动，一直显示在屏幕上
+                也是以网页边缘为参照物，距离下边缘60px，距离右边缘30px
+            */
+            position: fixed;
+            bottom: 60px;
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">绝对定位</div>
+    <div class="box2">相对定位</div>
+    <div class="box3">固定定位</div>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+    <h3>我是h3标签我是h3标签</h3>
+</body>
+</html>

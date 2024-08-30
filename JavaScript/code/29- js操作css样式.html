@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 250px;
+        }
+
+        .box1 {
+            background-color: rgb(103, 185, 103);
+        }
+
+        .box2 {
+            width: 400px;
+            height: 250px;
+            border: 10px solid #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1"></div>
+    <button id="btn1">点击修改盒子的样式</button>
+    <button id="btn2">点击修改盒子的样式</button>
+    <script>
+
+        btn1.onclick = function () {
+            let box = document.querySelector(".box");
+            // 通过标签对象调用 style 属性，给标签设置行内样式（css属性名遵循小驼峰）
+            box.style.backgroundColor = "#f00";
+            box.style.width = "600px"
+        }
+
+        btn2.onclick = function () {
+            let box = document.querySelector(".box");
+            // className 适用于标签中的class属性值只有一个
+            box.className = "box2";
+            // classList 适用于标签中的class属性值有多个时
+            box.classList.remove("box1");
+            box.classList.add("box2");
+        }
+
+    </script>
+</body>
+
+</html>

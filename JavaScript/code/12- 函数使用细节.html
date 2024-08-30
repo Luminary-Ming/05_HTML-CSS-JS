@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function demo(a, b) {
+            console.log(a, b);
+        }
+        // 多个实参传入时，根据形参的个数要哪几个
+        demo(1, 2, 3, 4, 5);  // 1 2
+        // 不传人参数时，默认值为 undefined
+        demo();  // undefined undefined
+
+        /*
+            在实际过程中，我们希望让形参的默认值为 0 而不是 undefined
+            因此可以这样操作：（在js中有这种语法，而Java没有）
+        */
+        function add(a = 0, b = 0) {
+            /*
+            if(!a) a = 0;
+            if(!b) b = 0;
+            a = a || 0;
+            b = b || 0;
+            */
+            return a + b;
+        }
+        console.log(add(4, 5));  // 9
+        console.log(add(6));  // 6
+    </script>
+</body>
+
+</html>

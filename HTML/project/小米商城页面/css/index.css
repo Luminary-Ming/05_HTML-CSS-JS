@@ -1,0 +1,122 @@
+/* 页面布局 */
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+/* 页面顶部 bengin */
+.header{
+    height: 100px;
+    background-color: #f2f2f2;
+}
+
+/* logo 搜索框 用户图标 */
+.header-item{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+/* 搜索框 */
+.header input{
+    height: 40px;
+    /* 去掉边框 */
+    border: none;
+    /* "输入商品内容" 这段话往右挪一点 */
+    padding-left: 40px;
+    color: #C6C6C6;
+    font-size: 18px;
+}
+
+/* 给搜索框和小搜索图标定义一个父盒子，宽高由内容填充 */
+.header .search{
+    position: relative;
+}
+
+/* 搜索框里的小搜索图标 */
+.header .search img{
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+
+/* 菜单弹性盒子 */
+.header .header-menu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* 菜单字体 */
+.header .header-menu a{
+    color: #747474; 
+}
+
+/* 菜单第一个字体 */
+.header-menu a.on{
+    color: #ED5B00;
+    border-bottom: 2px solid #ED5B00;
+    padding-bottom: 7px;
+}
+/* 页面顶部 end */
+
+
+
+
+
+/* 页面主体 bengin */
+.main{
+    flex-grow: 1;
+    /* 主体内容超出时自动生成纵向滚动条 */
+    overflow-y: auto;
+}
+
+/* 功能区 */
+.main .function{
+    display: flex;
+    flex-wrap: wrap;
+}
+.function img{
+    width: 20%;
+}
+
+/* 产品区 */
+.main .prodect{
+    display: flex;
+    flex-wrap: wrap;
+}
+.prodect img{
+    width: 50%;
+}
+/* 页面主体 end */
+
+
+
+
+
+
+
+
+/* 页面尾部 bengin */
+.footer{
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    /* 盒子边框阴影 x y 模糊度 阴影长度 颜色*/
+    box-shadow: 0 1px 3px 1px black;
+}
+
+/* 尾部文字 */
+.footer p{
+    text-align: left;
+    color: #9D9D9D;
+}
+
+/* 文字在图片下居中对齐 */
+.footer {
+    text-align: center;
+}
+/* 页面尾部 end */
+
+

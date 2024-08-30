@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">在标签中添加代码或文本</button>
+    <button id="btn1">添加新标签</button>
+    <button id="btn2">将box1替换成a标签</button>
+    <button id="btn3">删除div3标签</button>
+    <div class="box">div</div>
+    <div class="box1">div1</div>
+    <div class="box2">div2</div>
+    <div class="box3">div3</div>
+
+    <script>
+        // 点击按钮，在标签中添加代码或文本
+        btn.onclick = function () {
+            // 获取页面的 box 标签
+            let box = document.querySelector(".box");
+            console.log(box);  // 输出 box 中的标签
+            console.dir(box);  // 输出 box 中的所有属性和方法
+            // 给当前标签中添加 HTML 代码
+            box.innerHTML = "<div style='color: red;'>我是红色的div标签</div>";
+            // 给当前标签中添加文本   innerText 和 textContent 作用一样
+            box.innerText = "<div style='color: red;'>我只是文本1</div>";
+            box.textContent = "<div style='color: red;'>我只是文本2</div>";
+        }
+
+        // 在页面中添加标签
+        btn1.onclick = function () {
+            // 获取页面的 body 对象
+            let body = document.querySelector("body");
+            // 创建一个标签  <h1></h1>
+            let h1 = document.createElement("h1");
+            // 给标签添加属性 <h1 class="h1_box"></h1>
+            h1.setAttribute("class", "h1_box");
+            // 给标签添加内容 <h1 class="h1_box">我是新加的h1标签</h1>
+            h1.innerHTML = "我是新加的h1标签";
+            // 把创建的这个标签加到 body 界面上
+            body.appendChild(h1);
+        }
+
+        // 在界面中修改标签（替换）
+        btn2.onclick = function () {
+            let box1 = document.querySelector(".box1");
+            // <a href='https://www.baidu.com'>百度一下</a>
+            let a = document.createElement("a");
+            a.innerHTML = "百度一下";
+            a.setAttribute("href", "https://www.baidu.com");
+            console.log(box1.parentNode);  // 输出 box1 的父标签 即 body 标签
+            // box1.parentNode 就相当于父标签 即 body（就可以省略获取页面的 body 对象的步骤）
+            box1.parentNode.replaceChild(a, box1);
+        }
+
+        // 在界面中删除标签
+        btn3.onclick = function () {
+            let box3 = document.querySelector(".box3");
+            box3.parentNode.removeChild(box3);
+            // 也可以使用（新增）
+            box3.remove();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            函数的递归：
+                直接递归：函数自己调用自己
+                间接递归：A函数调用B函数，B函数调用C函数...最后N函数又调用A函数
+            
+            递归语法要求：
+                1. 函数内部调用自己
+                2. 必须要有结束条件，不然会无限递归最终造成栈溢出
+        */
+
+        // 计算 5 的阶乘
+        function fn(n) {
+            if (n > 1) {
+                return n * fu(n - 1);
+            }
+            return 1;
+        }
+        console.log(fn(5));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <!-- 第一种绑定事件方法：直接在标签上绑定事件 -->
+    <button class="btn" onclick="fn()">点击变色</button>
+
+    <script>
+        /*
+            js中常用的事件：
+                click ：鼠标单击
+                dblclick ：鼠标双击
+                mouseover ：鼠标移入标签
+                mouseout ：鼠标移出标签
+                keydown ：键盘按下
+                keypress ：键盘按住
+                keyup ：键盘松开
+                blur ：失去焦点
+                focus ：获取焦点
+        */
+        function fn() {
+            let box = document.querySelector(".box");
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+    </script>
+</body>
+
+</html>

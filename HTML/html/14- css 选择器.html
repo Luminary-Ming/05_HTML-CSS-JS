@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选择器</title>
+		<style>
+			/* 通用符选择器 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/* 标签选择器 */
+			p{
+				color: red;
+				font-size: 30px;
+			}
+			/* 类选择器 */
+			.text1{
+				color: green;
+				font-size: 30px;
+			}
+			.text2{
+				/* 斜体 */
+				font-style: italic;
+				
+			}
+			.text3{
+				background-color: antiquewhite;
+			}
+			/* id选择器 */
+			#text{
+				color: blue;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>标签选择器</p>
+			<div class="text1">类选择器</div>
+			<div class="text1">类选择器的class能重复</div>
+			<!-- class选择器 一个class可以写多个值 -->
+			<div class="text1 text2 text3">类选择器的class能写多个</div>
+			<!-- id选择器，一般不建议id重复，为了保证在JS可以正确的操作页面 -->
+			<div id="text">id选择器，一般不建议id重复，在JS中会出问题</div>
+		</div>
+	</body>
+</html>

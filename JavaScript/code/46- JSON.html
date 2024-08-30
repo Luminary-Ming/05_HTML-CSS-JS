@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="save">存储数据</button>
+    <button class="get">获取数据</button>
+
+    <script>
+        /*
+            JSON（JavaScript Object Notation）：指的是 JavaScript 对象表示方法
+                它有两种表现方式：数组 和 对象
+
+                JOSN中的方法：
+                    JSON.parse("字符串类型数据")  将字符串数据转成JSON（js对象）
+                    JSON.stringify(JSON)  将JSON（js对象）转成字符串数据
+        */
+
+        // 第一种表现方式：数组
+        let json1 = [
+            { "name": "亚索", "address": "艾欧尼亚" },
+            { "name": "沃利贝尔", "address": "弗雷尔卓德" },
+            { "name": "盖伦", "address": "德玛西亚" }
+        ];
+
+        // 第二种表现方式：对象  其中属性名必须是字符串类型，属性值可以是js中的任意类型
+        let json2 = {
+            "name": "拉克丝",
+            "address": "德玛西亚",
+            "price": 3150,
+            "skill": ["Q", "W", "E", "R"]
+        };
+
+        let save = document.querySelector(".save");
+        save.addEventListener("click", function () {
+            let str1 = JSON.stringify(json1);
+            let str2 = JSON.stringify(json2);
+            localStorage.setItem("json1", str1);
+            localStorage.setItem("json2", str2);
+        });
+
+        let get = document.querySelector(".get");
+        get.addEventListener("click", function () {
+            let name1 = localStorage.getItem("json1");
+            console.log(JSON.parse(name1));
+            let name2 = localStorage.getItem("json2");
+            // 输出字符串类型
+            console.log(name2);
+            // 输出 JSON 类型
+            console.log(JSON.parse(name2));
+        });
+
+    </script>
+</body>
+
+</html>

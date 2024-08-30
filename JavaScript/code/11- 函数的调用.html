@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function demo() {
+            console.log("demodemo...");
+            return;
+        }
+        demo();  // demodemo...
+
+        // js 可以将函数赋值给其他变量，此时变量名也是函数名
+        let a = demo;
+
+        // 变量名 a 与函数名 demo 等同，因此 a() 等同于 demo()
+        a();  // demodemo...
+
+        // 输出函数对象
+        console.log(a);
+        /*
+            console.log(a) 的输出：
+            ƒ demo() {
+                console.log("demodemo...");
+                return;
+            }
+        */
+    </script>
+</body>
+
+</html>

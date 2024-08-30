@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" id="demo1">我是第一个div</div>
+    <div class="box" id="demo2">我是第二个div</div>
+    <div>我是第三个div</div>
+    <div>
+        我是第四个div
+        <input type="radio" name="sex" value="男">男
+        <input type="radio" name="sex" value="女">女
+    </div>
+
+    <script>
+        /*
+            dom 全称是 Document Object Model，是把页面文档看成一个对象，
+            也是通过对象提供的属性和方法对文档进行一定的操作。
+        */
+
+        // 获取页面上的 html 标签
+        let html = document.documentElement;
+        console.log(html);
+        // 获取页面上的 body 标签
+        let body = document.body;
+        console.log(body);
+
+        // HTML4 版本中获取标签：
+        // 根据 id 选择器的属性值获取标签（只能选择一个）
+        let div1 = document.getElementById("demo1");
+        console.log(div1);  // <div class="box1" id="demo1">我是第一个div</div>
+
+        // 根据 class 选择器的属性值选择标签，获取的所有标签存放到一个集合中
+        let div1s = document.getElementsByClassName("box");
+        console.log(div1s);  // HTMLCollection(2) [div#demo1.box, div#demo2.box, demo1: div#demo1.box, demo2: div#demo2.box]
+
+        // 根据标签名选择标签，获取的所有标签存放到一个集合中
+        let divs = document.getElementsByTagName("div");
+        console.log(divs);  // HTMLCollection(4) [div#demo1.box, div#demo2.box, div, div, demo1: div#demo1.box, demo2: div#demo2.box]
+
+        // 根据 name 属性值选择标签，获取的所有标签存放到一个集合中
+        let sexs = document.getElementsByName("sex");
+        console.log(sexs);  // NodeList(2) [input, input]
+
+
+        // HTML5 版本中获取标签：（新增）
+        // 传入一个 css 选择器，获取选中的第一个标签
+        let div2 = document.querySelector("#demo2");
+        console.log(div2);  // <div class="box" id="demo2">我是第二个div</div>
+
+        // 传入一个 css 选择器，获取选中的所有标签存放到一个集合中
+        let boxs = document.querySelectorAll(".box");
+        console.log(boxs);  // NodeList(2) [div#demo1.box, div#demo2.box]
+
+    </script>
+</body>
+
+</html>

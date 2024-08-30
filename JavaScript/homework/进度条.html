@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out {
+            width: 500px;
+            height: 50px;
+            border: 1px solid red;
+        }
+
+        .in {
+            height: 50px;
+            width: 0%;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+    <button>恢复血量</button>
+
+    <script>
+
+        let divIn = document.querySelector(".in");
+        let btn = document.querySelector("button");
+        let divIn_width = 0;
+        btn.onclick = function () {
+            let timeId = setInterval(function () {
+                divIn_width += 0.5;
+                // TODO 使用 className 试一试
+                divIn.style.width = `${divIn_width}%`;
+                // 进度条充满时清除定时器
+                if (divIn_width == 100) {
+                    clearInterval(timeId);
+                }
+            }, 10);
+        }
+    </script>
+</body>
+
+</html>

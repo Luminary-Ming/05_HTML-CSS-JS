@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 150px;
+            background-color: #0af;
+            /* 向左浮动 */
+            float: left;
+        }
+
+        .box2 {
+            width: 220px;
+            height: 180px;
+            background-color: #fa0;
+            margin-top: 30px;
+            /* 清除浮动 */
+            clear: both;
+        }
+
+        .father {
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 给浮动的盒子添加一个父盒子 , 父盒子的高度为浮动盒子的高度 -->
+    <div class="father">
+        <div class="box1"></div>
+    </div>
+    <div class="box2"></div>
+</body>
+
+</html>
+
+<!-- 
+    浮动的影响（外边距塌陷问题）：
+    在页面上，上边的盒子浮动后，下边的盒子会往上边钻到上边盒子里面去。
+    可以使用 clear 来清除浮动，使下边的盒子在上边浮动盒子的下边。
+
+    外边距塌陷问题：下边的盒子在计算外边距时，由于上边的盒子是浮动的，因此找不到上边盒子的边界，使其上边距失效。
+    解决方案：
+    1. 在浮动盒子的下面加一个清除浮动的空div，可以比作一堵墙。
+    2. 给浮动的盒子添加一个父盒子，父盒子的高度为浮动盒子的高度。
+    3. 给浮动的盒子添加一个父盒子，父盒子中使用 overflow: hidden ，由于没有给父盒子设置高度，浏览器就会基于父盒子中的某个子盒子去计算高度，内容超出时隐藏。
+ -->

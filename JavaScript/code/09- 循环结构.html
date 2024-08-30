@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        table {
+            /* 边框合并 */
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px 30px;
+            border: 1px solid #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.write(`<table>`);
+        // 显示九九乘法表
+        for (let x = 1; x < 10; x++) {
+            document.write(`<tr>`);
+            for (let y = 1; y <= x; y++) {
+                document.write(`<td>${y}*${x}=${y * x}</td>`);
+            }
+            document.write(`</tr>`);
+        }
+        document.write(`</table>`);
+
+        // do while
+        // 100以内报数，含7或者7的倍数，显示过
+        let i = 1;
+        do {
+            if (i % 7 == 0 || i % 10 == 7 || parseInt(i / 10) == 7) {
+                console.log("过");
+            } else {
+                console.log(i);
+            }
+            i++;
+        } while (i <= 100);
+
+        // 判断某个数字是否为素数
+        let num = 15;
+        let flag = true;
+        for (let m = 2; m < num; m++) {
+            // m能够将num除尽，说明从2到num-1之间存在某个数字可以将num除尽
+            if (num % m == 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            // 模板字符串  用反引号（`）分隔的字面量（字面量就是值，比如 let a = 1，其中 a 是变量，1 是字面量）
+            console.log(`${num}是素数`);
+        } else {
+            console.log(`${num}不是素数`);  // 15不是素数
+        }
+    </script>
+</body>
+
+</html>

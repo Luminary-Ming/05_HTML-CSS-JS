@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 400px;
+            height: 400px;
+            background-color: #fa0;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: #faf;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: #a0f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+    </div>
+
+    <script>
+        /*
+            事件处理机：事件默认有两种处理机制：在父标签嵌套情况下，父子标签注册相同的事件，这时就会触发事件的处理机制。
+                冒泡机制（默认）：子标签事件触发时，虽然没有直接去触发父标签事件，但是子标签事件会冒泡到父标签上，导致父标签的事件也会被执行。
+                捕获机制：子标签事件触发时，在这之前会优先执行父标签中的事件，然后再去执行子标签中的事件。
+
+                冒泡：由内到外
+                捕获：由外到内
+
+                event.stopPropagation() 阻止捕获和冒泡阶段中当前事件的进一步传播。（阻断当前标签冒泡或捕获到下一标签）
+        */
+        /*
+            冒泡事件举例： （由内到外）
+                box2 事件加 e.stopPropagation() 之前：
+                    点击 box2 盒子时控制台会输出 box2 box1
+                    点击 box3 盒子时控制台会输出 box3 box2 box1
+                box2 事件加 e.stopPropagation() 之后：
+                    点击 box2 盒子时控制台会输出 box2
+                    点击 box3 盒子时控制台会输出 box3 box2
+                    阻断了 box2的下一标签事件，即阻断了 box1
+        */
+        let box1 = document.querySelector(".box1");
+        let box2 = document.querySelector(".box2");
+        let box3 = document.querySelector(".box3");
+
+        box1.addEventListener('click', function () {
+            console.log("box1");
+        })
+
+        box2.addEventListener('click', function (e) {
+            console.log("box2");
+            // 阻断当前标签冒泡或捕获到下一标签
+            e.stopPropagation();
+        })
+
+        box3.addEventListener('click', function () {
+            console.log("box3");
+        })
+    </script>
+</body>
+
+</html>

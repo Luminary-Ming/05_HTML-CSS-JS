@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 测试 align-content 时设置的宽度，并且允许换行*/
+            /* width: 300px; 
+            flex-wrap: wrap; */
+
+            width: 1200px;
+            height: 1000px;
+            background-color: antiquewhite;
+            /* 弹性盒子 */
+            display: flex;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: #a0f;
+        }
+
+        .box5 {
+            width: 100px;
+            height: 100px;
+            background-color: #0af;
+        }
+
+        .box6 {
+            width: 100px;
+            height: 100px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">111</div>
+        <div class="box2">222</div>
+        <div class="box3">333</div>
+        <div class="box4">444</div>
+        <div class="box5">555</div>
+        <div class="box6">666</div>
+        <div class="box1">777</div>
+        <div class="box2">888</div>
+        <div class="box3">999</div>
+    </div> 
+</body>
+
+</html>
+
+<!-- 
+    弹性盒子： display: flex（box flexbox flex）
+    1. 两条轴线：
+        主轴：默认水平向右  主轴起点：start 主轴终点：end
+        侧轴：默认纵向向下  侧轴起点：start 侧轴终点：end
+    2. 属性：
+        flex-direction : 设置主轴方向
+            row : 水平向右（默认）                  
+            row-reverse : 水平向左                 
+            column : 纵向向下（则侧轴变成水平向右）  
+            column-reverse : 纵向向上              
+
+        flex-wrap : 设置盒子内部元素是否换行
+            nowrap : 不换行，此时元素超出时会被压缩（默认）
+            wrap : 换行（如果换行后元素总高度 >= 盒子的高度，则元素上下紧挨着，反之元素上下会有边距）
+            wrap-reverse : 换行后倒序 即从最后一行向上排
+
+        justify-content : 设置主轴方向上元素的排列方式
+            start : 元素在主轴的起点位置（默认）
+            end : 元素在主轴的终点位置
+            center : 沿主轴方向水平居中排列
+            space-around : 沿主轴方向环绕排列（每个元素周围距离相同）
+            space-evenly : 沿主轴方向均匀分布（首尾元素边距和每个元素之间的距离相同）
+            space-between : 沿主轴方向首元素位于起点，尾元素位于终点，然后均匀分布
+
+        align-items : 设置纵轴方向上元素的排列方式
+            start : 元素在纵轴的起点位置（默认）
+            end : 元素在纵轴的终点位置
+            center : 沿纵轴方向垂直居中排列
+
+
+        align-content : 弹性盒子换行后变成多行元素沿纵轴的排列方式
+            一定要有换行 flex-wrap: wrap;  对单行盒子无效。
+            start : 元素贴着纵轴起点位置
+            end : 元素贴着纵轴终点位置
+            center : 元素沿纵轴方向垂直居中排列
+            space-between : 沿纵轴方向首行元素位于起点，尾行元素位于终点，然后均匀分布
+            space-evenly : 沿纵轴方向均匀分布（首尾行元素边距和每行元素之间的距离相同）
+            space-around : 沿纵轴方向环绕排列（每行元素周围距离相同）  
+        
+        flex-grow : 元素在弹性盒子里分配剩余空间的相对比例，取决于主轴方向（水平是宽比例，垂直是高比例）
+--> 

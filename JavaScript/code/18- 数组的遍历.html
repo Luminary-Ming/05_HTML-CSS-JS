@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4];
+
+        // 数组的遍历
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        // repeat()  复制字符串
+        console.log("--1---".repeat(10));
+
+        /*
+            for in 语句遍历数组（相当于java中的增强for）
+            for(let 变量名 in 数组名){}  这个变量名表示当前遍历数组的下标
+        */
+        for (let index in arr) {
+            console.log(index, arr[index]);
+        }
+
+        console.log("---2--".repeat(10));
+
+        /*
+            forEach() 遍历数组：
+                forEach() 是数组中的一个函数
+                forEach() 的底层是数组在遍历时，每遍历一个空间，就会自动调用传递的函数。
+        */
+        arr.forEach(function (value, index, arr) {
+            console.log(value);
+            console.log(index);
+            console.log(arr);
+        });
+        console.log("---3--".repeat(10));
+
+        /*
+            forEach() 的简化：
+                function 可以简化成 =>
+                当参数只有一个时可以去掉括号
+                函数体语句只有一句是可以省掉大括号
+        */
+        arr.forEach(value => console.log(value));
+
+    </script>
+</body>
+
+</html>

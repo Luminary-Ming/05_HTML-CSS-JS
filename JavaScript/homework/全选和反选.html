@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div>
+            <input type="checkbox" class="check-all">全选
+            <input type="checkbox" class="check-reverse">反选
+        </div>
+        <div>
+            <input type="checkbox" name="area">比尔吉沃特
+            <input type="checkbox" name="area">德玛西亚
+            <input type="checkbox" name="area">扭曲丛林
+            <input type="checkbox" name="area">艾欧尼亚
+            <input type="checkbox" name="area">黑色玫瑰
+        </div>
+    </div>
+
+    <script>
+        let checkAll = document.querySelector(".check-all");
+        let area = document.querySelectorAll("input[name='area']");
+
+        // 全选
+        checkAll.addEventListener("click", function () {
+            for (let i in area) {
+                area[i].checked = checkAll.checked;
+            }
+        });
+
+        let checkReverse = document.querySelector(".check-reverse");
+        // 反选
+        checkReverse.addEventListener("click", function () {
+            for (let i in area) {
+                area[i].checked = !area[i].checked;
+            }
+        });
+    </script>
+</body>
+
+</html>

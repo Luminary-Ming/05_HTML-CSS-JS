@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.baidu.com">百度</a>
+
+    <script>
+        let a = document.querySelector('a');
+
+        a.addEventListener('click', function (e) {
+            // 点击确认后跳转百度首页，点击去取消后不跳转网页
+            if (window.confirm("确定访问吗？")) {
+                console.log("访问成功!");
+            } else {
+                // 阻止事件的默认动作（行为）
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

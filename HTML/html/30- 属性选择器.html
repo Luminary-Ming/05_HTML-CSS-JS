@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择拥有abc属性的标签变红 */
+        [abc]{
+            color: #f00;
+        }
+
+        /* 选择拥有 abc='neuedu' 的标签 字号变大，加粗 */
+        [abc='neuedu']{
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        /* 在 .demo 的盒子里的内容后面 加上内容和该内容样式 */
+        .demo::after{
+            /* 必须要有 content属性*/
+            content: "123";
+            color: #0af;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        /* 在 .demo 的盒子里的内容后面 加上内容和该内容样式 */
+        .demo::before{
+            content: "ABC";
+            font-size: 32px;
+        }
+
+        /* 文本被选择时候的样式 */
+        p::selection{
+            background-color: deeppink;
+            color: #0af;
+        }
+
+        /* 输入框里面字体的样式 */
+        input::placeholder{
+            color: #0af;
+        }
+
+        /* 文本的第一个字 字号变大 */
+        p::first-letter{
+            font-size: 32px;
+        }
+
+        /* 文本第一行加粗 */
+        p::first-line{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div abc="neuedu">12321321321</div>
+    <div>12321321321</div>
+    <p abc="neusoft">12321321321</p>
+
+    <span class="demo">演示伪对象选择器</span>
+    <p>演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器</p>
+    <input type="text" placeholder="请输入用户名">
+</body>
+</html>

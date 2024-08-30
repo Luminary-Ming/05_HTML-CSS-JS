@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            java中定义方法的格式：
+                修饰符 返回值类型 方法名(参数类型 参数1, 参数类型 参数2 ...){
+                    // 方法体
+                }
+        */
+
+        /*
+            js中的函数：不需要参数类型，传入的参数可以是任何类型
+
+            方式一：传统方式定义
+
+                function 函数名(参数1, 参数2 ...){
+                    // 函数体
+                }
+
+            函数名，可以省略。当省略函数名的时候，该函数就成为了匿名函数。
+            例：
+                var myFunction = function () {
+                    // statements
+                };
+        */
+        // 例：计算两个数的和
+        function getSum(a, b) {
+            let sum = a + b;
+            return sum;
+        }
+
+        let s = getSum(1, 2);
+        console.log(s); // 3
+
+        // 当有多个参数传入时，会只取前两个，并不会报错
+        let s2 = getSum(1, 2, 3, 4, 5, 6);
+        console.log(s2); // 3
+
+        /*
+            方式二：常用 const 来定义一个函数
+            const 变量名 = function(参数1, 参数2 ...){
+                // 函数体
+            }
+        */
+        const demo = function (a) {
+            console.log("a的值是：", a);
+        };
+        demo(123); // a的值是： 123
+
+        /*
+            使用ES6中的箭头函数，即 lambda表达式
+                const 变量名 = (参数1, 参数2 ...) => { 函数体 }
+        */
+        const func = (a, b) => {
+            console.log(a, b);
+        }
+        func(123, 456);  // 123 456
+
+    </script>
+</body>
+
+</html>

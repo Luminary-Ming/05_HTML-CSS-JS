@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 32px;
+        }
+        /* 
+            基础选择器：
+                *{}     通用选择器
+                div{}   标签名选择器
+                #box{}  id选择器
+                .box{}  class选择器
+        */
+        
+        /* 
+            关系选择器（后代选择器）：
+                选择器 选择器{}
+        */
+
+        /* 选中 .box 盒子中的所有 p 标签  */
+        .box p{
+            color: #f00;
+        }
+
+        /* 选中 .box 盒子中的所有的亲儿子，不是孙子重孙子 */
+        .box > a {
+            color: rgb(0, 255, 34);
+        }
+
+        /* 选中 .box 盒子后面的第一个兄弟 */
+        .box + span{
+            color: rgb(6, 215, 234);
+        }
+
+        /* 选中 .box 盒子后面的所有兄弟 */
+        .box ~ em{
+            color: #0a0;
+        }
+
+        /* h1 和 h2 用相同的样式 */
+        h1, h2{ 
+            color:rgb(241, 217, 5); 
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>我是p标签我是 .box 的儿子</p>
+        <span>我是span标签我是 .box 的儿子</span>
+        <br>
+        <span>我是span标签我是 .box 的儿子</span>
+        <br>
+        <a href="#">我是a标签我是 .box 的儿子</a>
+        <p>我是p标签我是 .box 的儿子</p>
+        <a href="#">我是a标签我是 .box 的儿子</a>
+        <p>我是p标签我是 .box 的儿子</p>
+        <ul>
+            <li>我是li标签我是 ul 的儿子</li>
+            <li><a href="#">我是a标签我是 ul 的儿子</a></li>
+        </ul>
+    </div>
+    <span>兄弟选择器1</span>
+    <span>兄弟选择器2</span>
+    <span>兄弟选择器3</span>
+    <br>
+    <em>我是 em</em>
+    <br>
+    <em>我是 em</em>
+    <br>
+    <a href="#">京东</a>
+    <h1>我是 h1</h1>
+    <h2>我是 h2</h2>
+    <em>我是 em</em>
+</body>
+</html>

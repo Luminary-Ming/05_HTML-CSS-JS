@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        // e 是 event 指传入的这个键盘事件，e 是键盘事件的对象
+        let box = document.querySelector(".box");
+        // 监测浏览器窗口按下了什么键，然后标签对象做出相应的反应
+        window.addEventListener("keydown", function (e) {
+            console.log(e.key, e.keyCode);
+            if (e.keyCode == 37) {
+                // 向左
+                box.style.left = box.offsetX - 50 + "px";
+            } else if (e.keyCode == 38) {
+                // 向上
+                box.style.top = box.offsetTop - 50 + "px";
+            } else if (e.keyCode == 39) {
+                // 向右
+                box.style.left = box.offsetLeft + 50 + "px";
+            } else if (e.keyCode == 40) {
+                // 向下
+                box.style.top = box.offsetTop + 50 + "px";
+            }
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let username = '张三';
+        let age = 20;
+        let sex = '男';
+        let addr = "天津";
+
+        // 传统方式
+        let obj = {
+            username: username,
+            age: age,
+            sex: sex
+        };
+        console.log(obj);
+
+        // ES6中关于对象的简化书写
+        // 属性名和属性值对象的变量相同的时候，只需要书写属性名
+        let obj2 = {
+            username,
+            age,
+            sex,
+            // 设置别名
+            address: addr,
+            say: function () {
+                console.log(this.username);
+            },
+            // 方法的简化：省略：function关键字，不能采用箭头函数的方式（lambda表达式）
+            // function hi(){}
+            hi() { }
+        }
+
+        console.log(obj2);
+
+    </script>
+</body>
+
+</html>

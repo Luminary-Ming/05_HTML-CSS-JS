@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="save">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="clear">删除所有数据</button>
+
+
+    <script>
+        /*
+            web存储：在浏览器里存储一些客户端的数据。（只能存储字符串类型数据）
+                1. Cookie技术：作用是帮助服务器记住客户端的某些信息（如：登录状态，填写信息，用户偏好等），
+                   以致用户下次访问时服务器可以从cookie中读取用户访问记录。
+
+                2. sessionStorage（会话存储）和 localStorage（本地存储）
+                    两者方法相同：
+                        setItem("属性名", "属性值") 添加或修改数据
+                        getItem("属性名")     获取数据
+                        removeItem("属性名")  删除数据
+                        clear()   清空数据
+                    两者区别在于：
+                        sessionStorage（会话存储）：存储的数据在浏览器窗口关闭后就会清空删除。
+                        localStorage（本地存储）：是永久存储，即使关闭浏览器后，数据依旧存储在 localstorage 中。
+        */
+
+        // 存储数据
+        let save = document.querySelector(".save");
+        save.onclick = function () {
+            localStorage.setItem("username", "亚索");
+            // 只能存储字符串类型数据
+            localStorage.setItem("age", "20");
+            localStorage.setItem("address", "艾欧尼亚");
+        }
+
+        // 获取数据
+        let get = document.querySelector(".get");
+        get.onclick = function () {
+            let username = localStorage.getItem("username");
+            console.log(username);
+        }
+
+        // 删除数据
+        let remove = document.querySelector(".remove");
+        remove.onclick = function () {
+            localStorage.removeItem("address")
+        }
+
+        // 删除所有数据
+        let clear = document.querySelector(".clear");
+        clear.onclick = function () {
+            localStorage.clear();
+        }
+
+    </script>
+</body>
+
+</html>

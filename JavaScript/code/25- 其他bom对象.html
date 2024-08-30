@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="baidu">我是一个按钮</button>
+    <script>
+        // 获得浏览器所在设备屏幕的一些信息
+        console.log(window.screen);
+        // 获得浏览器自身相关的一些信息
+        console.log(window.navigator);
+
+        // 获得浏览器当前地址栏的一些信息
+        console.log(window.location);
+
+
+        baidu.onclick = function () {
+            // 刷新当前页面
+            window.location.reload();
+            // 跳转到百度
+            window.location.href = "https://www.baidu.com";
+            // 将当前页面换成百度，并且无法回退
+            window.location.replace("https://www.baidu.com");
+        }
+
+
+        // 打印 history 中的属性和函数
+        console.log(window.history);
+        // 返回前一个页面 相当于 go(-1)
+        window.history.back();
+        // 前进下一个页面 相当于 go(1)
+        window.history.forward();
+        // 刷新页面
+        window.history.go(0);
+        // 后退三个页面
+        window.history.go(-3);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            vertical-align: bottom;
+        }
+        span{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img width="200px" src="../img/头像640x640.jpg" alt="">
+        <span>演示图片3px问题</span>
+        <span>演示图片3px问题</span>
+    </div>
+    <br> <br>
+    <div>
+        个人描述：<textarea cols="30" rows="10"></textarea>
+    </div>
+</body>
+</html>
+
+<!-- 
+    问题是图片与文字底部对不齐，图片比文字多出3px。原因是 vertical-align 默认值 baseline，此时图片下方就会多出3px。
+    解决方式是把 vertical-align 值设为 bottom，这样图片和文字底部就对齐了。
+-->

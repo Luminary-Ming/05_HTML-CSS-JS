@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 直接创建一个对象
+        let obj1 = {
+            name: "沃利贝尔",
+            type: "上单",
+            address: "弗雷尔卓德"
+        };
+        console.log(obj1);  // {name: '沃利贝尔', type: '上单', address: '弗雷尔卓德'}
+
+
+        // 使用 new 关键字，得到js中的一个对象
+        let obj2 = new Object();
+        // 可以给对象添加任意的属性和方法
+        obj2.name = "沃里克";
+        obj2.type = "打野";
+        obj2.address = "祖安";
+        obj2.printInfo = function () {
+            console.log(obj2);
+        }
+        obj2.printInfo();   // {name: '沃里克', type: '打野', address: '祖安', printInfo: ƒ}
+        console.log(obj2);  // {name: '沃里克', type: '打野', address: '祖安', printInfo: ƒ}
+
+        // js中的函数可以是对象（类似以java中的构造函数）
+        function Person(name, type) {
+            this.name = name;
+            this.type = type;
+            this.address = "召唤师峡谷";
+            this.printInfo = function () {
+                console.log(this.name, this.type);
+            }
+            this.printInfoAll = function () {
+                console.log(this.name, this.type, this.address);
+            }
+        }
+        let p = new Person("亚索", "中单");
+        console.log(p.printInfo());  // 亚索 中单
+        console.log(p.printInfoAll());  // 亚索 中单 召唤师峡谷
+
+        console.log(p.name);  // 亚索
+        console.log(p.address);  // 召唤师峡谷
+
+        // 遍历对象中的所有属性和方法
+        for (let key in p) {
+            console.log(key, p[key]);
+        }
+        /*  控制台输出：
+            name 亚索
+            type 中单
+            address 召唤师峡谷
+            printInfo ƒ () {
+                console.log(this.name, this.type);
+            }
+            printInfoAll ƒ () {
+                console.log(this.name, this.type, this.address);
+            }
+        */
+
+    </script>
+</body>
+
+</html>

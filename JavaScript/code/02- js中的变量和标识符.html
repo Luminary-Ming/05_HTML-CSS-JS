@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            和 Java 一样
+            标识符：关键字、保留字、用户自定义符号
+            标识符的命名规则：
+                1、只能由数字、字母、下划线、$ 组成
+                2、不能以数字开始
+                3、如果是自定义标识符不能是关键字或者保留字
+
+            关键字：js中拥有特定含义的一些单词 
+            保留字：目前还不是关键字，未来的版本中可能会设置为关键字
+            用户自定义符号：根据程序的需要开发人员自己命名的一些符号
+                变量名、函数(方法)名、类名、数组名等
+                在自定义标识符的时候，一般都需要满足：见名知意
+                然后需要满足命名的规范：
+                1、变量名、函数(方法)名、数组名：小驼峰
+                2、类名：大驼峰
+        */
+
+        /*
+            在 Java 中定义变量：
+                数据类型 变量名;
+                数据类型 变量名 = 值;
+
+            在 JS 中定义变量：
+                关键字有 var let const 这些是关键字而不是数据类型（JS 属于弱类型编程语言）
+
+                var 变量名;
+                var 变量名 = 值;
+
+                let 变量名;
+                let 变量名 = 值;
+
+                const 变量名 = 值;  定义常量
+
+                var 定义变量，可以先用变量，后定义变量
+                let 定义变量，必选先定义变量，才能使用变量
+        */
+        aa = 100;
+        var aa;
+        console.log(aa);  // 100
+
+        let cc = 300;
+        console.log(cc);  // 300
+
+        bb = 200;
+        let bb;
+        console.log(bb);  // Uncaught ReferenceError: Cannot access 'bb' before initialization
+
+    </script>
+</body>
+
+</html>

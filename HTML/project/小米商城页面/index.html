@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+</body>
+    <!-- 
+        在HTML5中提供一些语义化的布局标签，等同于div
+        <header></header>   用于布局页面的头部
+        <nav></nav>         用于布局页面的导航（菜单）
+        <main></main>       用于布局页面的主体内容
+        <article></article> 用于布局页面的文章信息
+        <section></section> 用于布局页面的文章一个章节
+        <aside></aside>     用于布局页面的侧边栏
+        <footer></footer>   用于布局页面的尾部
+        <div></div>         用于布局页面的通用容器
+        在布局移动端界面的时候，建议使用HTML5的语义化布局标签
+     -->
+<!-- 页面顶部 -->
+<header class="header">
+    <!-- 顶部的上部分 -->
+    <div class="header-item">
+        <div><img width="32.62px" src="https://m.mi.com/static/img/icon-header-logo3.ddf2a1c313.png" alt=""></div>
+        <!-- 给搜索框和小搜索图标定义一个父盒子，宽高由内容填充 -->
+        <div class="search">
+            <!-- 搜索框 -->
+            <input type="text" placeholder="输入商品名称">
+            <!-- 小搜索图标 -->
+            <img width="26px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAQAAAD/5HvMAAAEx0lEQVQYGe3Bf0yUdRwH8I9GpBtZVpul0y1/ZD8sKzdXbupMh3Pq0jWtzbVs9YfL8scfLq02h1m52R3c832+z/d5HrjjAOH4KQhy4MQD4eS4gXiCePLjBIwU8VeCOAPy3dZf/mEpz56zW93rRRQVFRUVFfU/dGFM+UTHlOrXzq/yf9HwefeS0plpk4/F0b+je5x/UZXIPZV+URmRwMEhQfs940K+ry6hYTY9Wu0Tyze6yxVYwSGgQoUKFSpUCMiwwH6zPLVqZVcsPRrlSwvqVVghwMGhQYMOHTp0aNDAIcBhhQ53UcWLFH4127QrElQwqEi7keUu21W/vnl5+/y2dwKraj8p3pdZ7bzDIYNDQmqweQWFU/cTpU4GAQUMro6SbR2z6D4aFuRb0m4yqFCgDXq3U7hciynOSYQOBertgr2np9I/ODHPlSlDg4AN3m8oPKq+t0GHguSexg/ogepjPbvZkIACbci3lsx3Yr06rECGvSO4gB6SbxMb5pBhDwZeInN1vWJvY5DB+5uX0ShUfmeDAhtKCkOxZCZPogUCMo5vpFEJxRSkcKiQ0BBP5gnMSu+RIaGokEatc2ZqSEBCqasnhszi32SFgBYKLiQDqnfI0CAGz79B5uibkOOVIZCXTob0TrK3qeA4tpfM0TmPQYO427CBDHLrDAoO+H+LITM0r+VQkRy88DwZFFiXBAWOS73PkRl8WzgU5JVVjyeDQi+LPhmOW63zyAxH9yvgKE31jCGDKqZltTPYh+rXkBmKXAIyKpLIsJpn8hskpMDzJZmhKFuAoXIfGeaPO+i1IQXHtpIZPHsVyCgXZJhnUm6TBPtI3UdkBv9mDo5DOVUxZFDpjAO/yHDcCcSTGVreZxDI8F58kgxqelMe5LD3h+aQGbrnsBENYrDjbTKobnMSFLh8A7Fkhpa4Ao8MgcpdZEjTuAI3h4DnRzJLYEMiODKPX3qKDAjOF30a+N3gYjJLz+SMs0lQUL2ZDDiYqkDCQffFcWSeih8sYEht/HUqjVJgjehTIOH0CjJT99QDbRJsKCxtG0+j0PWqvUOGFYdzyGxnlyVf5ZCQ9xM9tJPP5jbaIMEZ7J5B5jv6FR/iUPsP778eRw+hc4ajhEGBs+NkPIXDmTFuRyI4FBSW9EyhB2h9N+O0AgEFR5MoXK49XilzMDBktBZ+Fnia/oZ/ev6elKscAioUOEPtCyl8POucfRwSZOTVunZWxg9MoHtcnuxek5mQE7JBhoAODQIStBttCyh8OubmHEke4LBAhXM4uykt35mWb8212bPSi7M6nX9wWCGQfL2M9U73JjBw2KBfbl1M4VPxmG9tdl76gA0WWCBBhQYNKiRY8TMYMnuzXdVL6S/H90hQwGHvObeEwiv4Vpn1UG1ea9ZV510dOhxIG8npOnykNKF5Lt2jZjeDCgXJl4PLKdx6xja+4Hm94D3Hh471rhXFi+qm0X3UfMsgwKDeOreUIoP3awYFEsTNs8soMnh3MnAw6FdallNkOLGLQUBBcl/LSooMtTtkqODQBlpWU2TwbZGhgEG5fWY1RQbfVhkcDKK/eTVFhtrtMjg49Butiygy+LfKEOAodlKkCHyq94vhUx9T5GiYXjn73FiKioqKior6z/oTCs8KMOW0P6QAAAAASUVORK5CYII=">
+        </div>
+        <!-- 用户 -->
+        <div><img width="26px" src="https://m.mi.com/static/img/icon-user.23496a0116.png" alt=""></div>
+    </div>
+     <!-- 顶部的下部分 -->
+    <div class="header-menu">
+        <a href="#" class="on">推荐</a>
+        <a href="#" >智能</a>
+        <a href="#" >电视</a>
+        <a href="#" >家电</a>
+        <a href="#" >笔记本</a>
+    </div>
+</header>
+
+
+
+<!-- 页面主体 -->
+<main class="main">
+    <!-- 轮播图 -->
+    <div>
+        <img width="100%" height="33%" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/77da0fd2351452b62cec01753bcc65ce.jpg?f=webp&w=1080&h=540&bg=6B7996" alt="">
+    </div>
+
+    <!-- 功能栏 -->
+    <div class="function">
+        <img src="./imgs/menu1.webp" alt="">
+        <img src="./imgs/menu2.webp" alt="">
+        <img src="./imgs/menu3.webp" alt="">
+        <img src="./imgs/menu4.webp" alt="">
+        <img src="./imgs/menu5.webp" alt="">
+        <img src="./imgs/menu6.webp" alt="">
+        <img src="./imgs/menu7.png" alt="">
+        <img src="./imgs/menu8.png" alt="">
+        <img src="./imgs/menu9.webp" alt="">
+        <img src="./imgs/menu10.png" alt="">
+    </div>
+
+    <!-- 商品区 -->
+    <div class="prodect">
+        <img src="./imgs/item3.webp" alt="">
+        <img src="./imgs/item6.jpg" alt="">
+        <img src="./imgs/list2.webp" alt="">
+        <img src="./imgs/item4.jpg" alt="">
+        <img src="./imgs/notebook2.jpg" alt="">
+        <img src="./imgs/notebook1.webp" alt="">
+        <img src="./imgs/other2.webp" alt="">
+        <img src="./imgs/other3.webp" alt="">
+        <img src="./imgs/other4.webp" alt="">
+        <img src="./imgs/other6.webp" alt="">
+        <img src="./imgs/other5.webp" alt="">
+        <img src="./imgs/swiper2.webp" alt="">
+        <img src="./imgs/list1.webp" alt="">
+        <img src="./imgs/item2.jpg" alt="">
+    </div>
+</main>
+
+
+
+<!-- 页面尾部 -->
+<footer class="footer">
+
+    <div>
+        <img width="26px" src="https://m.mi.com/static/img/icon-home-selected.598ca2c8f9.png" alt="">
+        <p>首页</p>
+    </div>
+
+    <div>
+        <img width="26px" src="https://m.mi.com/static/img/icon-category.be93273636.png" alt="">
+        <p>分类</p>
+    </div>
+
+    <div>
+        <img width="26px" src="https://m.mi.com/static/img/icon-star.d051789804.png" alt="">
+        <p>米圈</p>
+    </div>
+
+    <div>
+        <img width="26px" src="https://m.mi.com/static/img/icon-cart.585c3aa4d3.png" alt="">
+        <p>购物车</p>
+    </div>
+
+    <div>
+        <img width="26px" src="https://m.mi.com/static/img/icon-user.23496a0116.png" alt="">
+        <p>我的</p>
+    </div>
+</footer>
+
+
+
+</html>

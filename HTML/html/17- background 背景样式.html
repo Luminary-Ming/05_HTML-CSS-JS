@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景样式</title>
+    <style>
+        .box {
+            width: 3800px;
+            height: 3600px;
+            background-color: red;
+            background-image: url(../img/玲玲.png);
+            /* 
+                背景图片平铺：
+                    repeat：允许x和y方向平铺
+                    no-repeat：不允许x和y方向平铺
+                    repeat-x:允许x方向平铺
+                    repeat-y:允许y方向平铺 
+            */
+            background-repeat: no-repeat;
+
+            /* 
+                背景图片的位置：
+                    像素：  x方向的位置   y方向的位置  例如：background-position: 100px 100px;
+                    百分比：x方向的位置   y方向的位置  例如：background-position: 50% 50%;
+                    方位词：x方向的位置   y方向的位置  例如：background-position: center bottom;
+            */
+            background-position: center bottom;
+
+            /* 背景图片覆盖 */
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

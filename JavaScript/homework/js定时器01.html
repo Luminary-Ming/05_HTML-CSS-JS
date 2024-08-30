@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用定时器完成如下功能：页面上一个div标签，每个一秒div背景颜色随机切换一个 -->
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector(".box");
+        setInterval(function () {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

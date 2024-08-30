@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="start">开始</button>
+    <button id="_stop">停止</button>
+    <div id="result">姓名</div>
+
+    <script>
+        let arr = ["亚索", "盲僧", "剑圣", "狼人", "狗熊", "奥拉夫", "蒙多", "剑魔"];
+
+        // 获取标签对象
+        // let start = document.querySelector("#start");
+        // let _stop = document.querySelector("#_stop");
+        // let result = document.querySelector("#result");
+
+        let timeId = null;
+        // 开始按钮
+        start.onclick = function () {
+            timeId = setInterval(function () {
+                let i = Math.floor(Math.random() * arr.length);
+                result.innerHTML = `<b>${arr[i]}</b>`;
+            }, 50);
+        }
+        // 停止按钮
+        _stop.onclick = function () {
+            clearInterval(timeId);
+        }
+
+        /*
+            onclick 
+                严谨来说应该先获得标签对象再进行其他操作，
+                但是如果标签使用的是id选择器（class 试过了不行），也可以直接使用 id名.onclick 的方式操作点击事件，
+                但是还是推荐先获得标签对象再进行操作。
+        */
+
+    </script>
+</body>
+
+</html>

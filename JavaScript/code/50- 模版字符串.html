@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            js中的字符串，需要使用 双引号，单引号，反引号引用
+
+            模板字符串：使用 反引用引用的数据
+        */
+        let username = "张三";
+        let age = 20;
+        let sex = "女";
+        // let info = "姓名: " + username + "，年龄：" + age + "，性别：" + sex ;
+        let info = `${fn()} 姓名: ${username}，年龄：${age + 3}，性别：${sex}`;
+        console.log(info);
+
+        function fn() {
+            return "我的信息是："
+        };
+
+
+
+    </script>
+</body>
+
+</html>

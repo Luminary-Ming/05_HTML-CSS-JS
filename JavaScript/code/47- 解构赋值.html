@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            ES6 中允许按照对应位置，从不同类型数据中提取值，然后对变量进行赋值，这称为解构赋值。
+        */
+
+        /* 数组中的解构 */
+        let arr = [1, 2, 3, 4, 5, 6];
+        // 传统赋值方式
+        let a = arr[0];
+        let b = arr[1];
+        let c = arr[2];
+        let d = arr[3];
+        console.log(a, b, c, d);  // 1 2 3 4
+
+        // ES6 中的解构赋值 
+        // [1, 2, 3, 4, 5, 6] 对应前三个位置
+        let [aa, bb, cc] = arr;
+        console.log(aa, bb, cc);  // 1 2 3
+
+        // 解构赋值允许设置默认值
+        let [e, f = 1] = [10];
+        console.log(e, f);  // 10 1
+
+
+        /*字符串中的解构*/
+        let [s1, s2] = "abcd";
+        console.log(s1, s2); // a b
+
+
+        /* 对象中的解构 */
+        let obj = {
+            "name": "拉克丝",
+            "address": "德玛西亚",
+            "price": 3150,
+            "skill": ["Q", "W", "E", "R"]
+        }
+        let { name, price } = obj;
+        console.log(name, price);  // 拉克丝 3150
+        // 可以起别名
+        let { name: hero, address } = obj;
+        console.log(hero, address);  // 拉克丝 德玛西亚
+
+
+        /* 函数参数中的解构 */
+        let arr2 = [1, 2, 3, 4, 5, 6];
+        function fn([a, b, c]) {
+            console.log(a, b, c);
+        }
+        fn(arr2);  // 1 2 3
+
+        function fn2({ name: hero, address }) {
+            console.log(hero, address);
+        }
+        fn2(obj);  // 拉克丝 德玛西亚
+
+
+        /* 解构赋值实现快速交换数据 */
+        let x = 10;
+        let y = 20;
+        [x, y] = [y, x];
+        console.log(x, y);  // 20 10
+    </script>
+</body>
+
+</html>
