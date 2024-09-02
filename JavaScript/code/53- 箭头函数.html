@@ -10,18 +10,115 @@
 <body>
     <script>
         /*
+            JavaScript 中的箭头函数（Arrow Functions）是一种更简洁的函数写法。
             箭头函数的简写方式：
                 function(e) { 一行 } ---- e => 一行
                 function() { 一行 } ----- ()=> 一行  
                 function(e) { } --------- e => { } 
                 function() { } ---------- ()=> { }   
-             
-            // TODO 箭头函数
-            https://blog.csdn.net/DcTbnk/article/details/105419682
+        */
+        const fn = function (a, b) {
+            return a + b;
+        }
+        // 当大括号内只有一条返回语句时，可以省略 大括号 和 return 关键字
+        const fn1 = (a, b) => a + b;
 
+        /*
+            在 JavaScript 中，箭头函数的一个关键特性是它们不绑定自己的 this 值。
+                在 function 函数中 this 的指向：
+                    声明式         function fn(){}                           this 指向 window         
+                    赋值式         const fn = function(){}                   this 指向 window
+                    定时器中的函数  setInterval(function(){}, time)           this 指向 window
+                    对象中的函数    let obj = { fu:function(){} }             this 指向 obj对象
+                    事件处理函数    box.addEventListener(事件,function(){})   this 指向 标签对象
+
+                箭头函数中 this 的指向：是父级程序的 this 指向
+                    如果父级程序中有 this 的指向，那么箭头函数中 this 指向的就是父级程序的 this 指向。
+                    如果父级程序中没有 this 的指向（对象、数组没有this的指向），那么箭头函数中 this 指向的就是 window。
+
+                由于箭头函数不绑定自己的 this，因此它们不能用作构造函数。尝试使用 new 关键字与箭头函数一起使用会导致运行时错误。
+
+
+            ！！！！文心一言补充理解：！！！！
+                父级程序的this指向这里的 “父级程序” 指的是箭头函数外部的代码块或作用域。当说 “父级程序有 this 指向” 时，
+                实际上是指箭头函数定义时所处的上下文环境有一个明确的 this 值。
+                这个 this 值可能是全局对象（在浏览器中是 window，在 Node.js 中是 global 或其他），
+                或者是某个对象（如果箭头函数是在某个对象的方法内部定义的，但这里有个重要的区别，因为箭头函数不会从对象方法继承 this）。
+        
+                首先，数组和对象本身并不直接 “拥有” this，但当你在它们的方法内部（使用传统函数）时，this会指向调用该方法的对象。
+                然而，对于箭头函数来说，它并不关心它是在对象、数组还是其他任何类型的上下文中定义的。
+                它只关心它被定义时那个上下文的 this 值是什么。如果箭头函数是在全局作用域中定义的，
+                并且全局作用域中的 this 指向 window（在浏览器环境中），那么箭头函数的 this 也会指向 window。
+                但如果箭头函数是在某个函数内部定义的，并且那个函数在执行时有自己的 this 上下文（比如作为某个对象的方法被调用），
+                那么箭头函数会捕获那个函数执行时的 this 值，而不是 window。
         */
 
 
+        // 例子 1: 全局作用域中的箭头函数
+        var username = "我是闪电";
+        let globalArrowFunc = () => {
+            // 箭头函数在全局作用域中定义，所以 this 指向全局对象（window）
+            console.log(this.username); // 我是闪电  
+        };
+        globalArrowFunc();
+
+
+
+        // 例子 2: 对象方法中的箭头函数
+        let obj = {
+            objVar: 'I am obj',
+            objMethod: function () {
+                console.log(this.objVar); // 输出: I am obj  
+                let arrowFunc = () => {
+                    console.log(this.objVar); // 输出: I am obj  
+                    // 注意：这里的this不是指向箭头函数本身，而是捕获了 objMethod 执行时的 this 上下文  
+                };
+                arrowFunc();
+            }
+        };
+        obj.objMethod();
+
+
+
+        // 例子 3: 构造函数中的箭头函数
+        // 错误示例：尝试将箭头函数用作构造函数  
+        let ArrowConstructor = () => {
+            this.instanceVar = 'I am an instance'; // 这里会抛出TypeError，因为箭头函数没有自己的 this  
+        };
+
+        // 尝试创建实例（会失败）  
+        //let instance = new ArrowConstructor(); // TypeError: ArrowConstructor is not a constructor  
+
+        // 正确的做法是使用普通函数  
+        function RegularConstructor() {
+            this.instanceVar = 'I am an instance';
+        }
+
+        let instance1 = new RegularConstructor();
+        console.log(instance1.instanceVar); // 输出: I am an instance
+
+
+
+
+        // 例子 4: 回调函数中的箭头函数
+        function callWithThisContext(callback) {
+            this.callbackVar = 'Callback context';
+            callback();
+        }
+
+        let obj1 = {
+            objVar: 'Obj context'
+        };
+
+        callWithThisContext(() => {
+            console.log(this.callbackVar);  // 输出: Callback context , 箭头函数捕获到了上文中 callWithThisContext() 中的 this 指向
+        });
+
+        // 如果使用普通函数，结果可能会不同  
+        callWithThisContext(function () {
+            console.log(this.objVar);  // 输出: undefined，因为这里的 this 不会指向 obj1 对象  
+            console.log(obj1.objVar);  // 输出: Obj context
+        });
     </script>
 </body>
 

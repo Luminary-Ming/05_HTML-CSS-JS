@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            回调函数：
+                一个函数暂时不执行，因为某个事件，或者特定的场景被激活之后，回头再去调用的函数。
+        */
+        // 获取标签对象
+        let box = document.querySelector(".box");
+        // 点击页面上这个标签触发 click 事件，通过事件回调对应的函数 function()
+        box.addEventListener("click", function () { })
+        // 每隔 1s，调用一次函数 function()
+        setInterval(function () { }, 1000)
+    </script>
+</body>
+
+</html>
